@@ -43,6 +43,7 @@ export function DashboardPreview() {
 
       {/* Floating: Live events card */}
       <motion.div
+        className="dashboard-float-badge"
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 3.6, ease: 'easeInOut', repeat: Infinity }}
         style={{ position: 'absolute', top: 16, right: -32, zIndex: 10 }}
@@ -52,6 +53,7 @@ export function DashboardPreview() {
 
       {/* Floating: AI insight */}
       <motion.div
+        className="dashboard-float-badge"
         animate={{ y: [0, 7, 0] }}
         transition={{ duration: 4.2, ease: 'easeInOut', repeat: Infinity, delay: 1.2 }}
         style={{ position: 'absolute', bottom: 20, left: -24, zIndex: 10, background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', borderRadius: 16, border: '1px solid rgba(255,255,255,0.95)', boxShadow: '0 8px 24px rgba(0,0,0,0.07)', padding: '12px 14px', display: 'flex', alignItems: 'flex-start', gap: 10, maxWidth: 196 }}

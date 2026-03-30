@@ -37,26 +37,12 @@ export function Hero() {
         </div>
 
         {/* Main content */}
-        <div style={{
-          flex: 1,
-          display: 'flex',
-          alignItems: 'stretch',
-          padding: '0 60px 72px',
-          gap: 48,
-          position: 'relative',
-          zIndex: 1,
-        }}>
+        <div className="lp-hero-content">
 
           {/* Left column: text anchored to bottom */}
           <motion.div
             variants={stagger} initial="hidden" animate="visible"
-            style={{
-              flex: '0 0 50%',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'flex-end',
-              paddingTop: 80,
-            }}
+            className="lp-hero-col-text"
           >
             {/* Label */}
             <motion.div variants={fadeUp} style={{ marginBottom: 20 }}>
@@ -154,14 +140,7 @@ export function Hero() {
           </motion.div>
 
           {/* Right column: dashboard preview floating card */}
-          <div style={{
-            flex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'flex-end',
-            paddingTop: 48,
-            paddingBottom: 24,
-          }}>
+          <div className="lp-hero-col-preview">
             <motion.div
               initial={{ opacity: 0, y: 36, scale: 0.97 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}

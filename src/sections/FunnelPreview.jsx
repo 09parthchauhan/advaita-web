@@ -61,10 +61,10 @@ export function FunnelPreview() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                  style={{ display: 'flex', alignItems: 'center', gap: 14 }}
+                  className="funnel-step-row"
                 >
                   {/* Step label */}
-                  <div style={{ width: 200, flexShrink: 0, fontSize: '0.82rem', fontWeight: 500, color: 'rgba(240,235,224,0.75)', textAlign: 'right', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                  <div className="funnel-step-label">
                     {step.label}
                   </div>
                   {/* Bar track */}
@@ -97,7 +97,7 @@ export function FunnelPreview() {
             </div>
 
             {/* Conversion summary row */}
-            <div style={{ display: 'flex', gap: 16, marginTop: 28, paddingTop: 20, borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+            <div className="funnel-summary-row">
               {[
                 { label: 'Overall conversion', value: '12%', color: '#F59E0B' },
                 { label: 'Avg drop per step', value: '22%', color: '#F47B20' },
