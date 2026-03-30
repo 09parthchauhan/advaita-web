@@ -1,124 +1,209 @@
 import { motion } from 'framer-motion'
 import { DashboardPreview } from '../components/DashboardPreview.jsx'
-import { fadeUp, stagger } from '../constants/index.jsx'
+import { stagger, fadeUp } from '../constants/index.jsx'
 
 export function Hero() {
   return (
-    <section style={{ position: 'relative', paddingTop: 140, paddingBottom: 0, overflow: 'hidden' }}>
-      {/* Gradient mesh blobs */}
-      <div aria-hidden style={{ position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', width: 800, height: 800, top: '-20%', left: '50%', transform: 'translateX(-50%)', borderRadius: '50%', background: 'radial-gradient(circle, rgba(244,123,32,0.13) 0%, transparent 65%)', filter: 'blur(80px)' }} />
-        <div style={{ position: 'absolute', width: 560, height: 560, top: '10%', left: '-5%', borderRadius: '50%', background: 'radial-gradient(circle, rgba(79,70,229,0.1) 0%, transparent 70%)', filter: 'blur(70px)' }} />
-        <div style={{ position: 'absolute', width: 480, height: 480, top: '10%', right: '-5%', borderRadius: '50%', background: 'radial-gradient(circle, rgba(13,148,136,0.08) 0%, transparent 70%)', filter: 'blur(70px)' }} />
-      </div>
+    // Outer section: page bg color, inset margins (ZeroDrift style)
+    <section style={{ background: '#F0EEE8', padding: '16px 20px 32px' }}>
+      {/* Dark hero card */}
+      <div style={{
+        position: 'relative',
+        minHeight: '90vh',
+        background: '#0D0D0D',
+        borderRadius: 8,
+        display: 'flex',
+        flexDirection: 'column',
+      }}>
 
-      <div className="lp-wrap" style={{ position: 'relative', zIndex: 1 }}>
-        <motion.div
-          variants={stagger} initial="hidden" animate="visible"
-          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: 28 }}
-        >
-          {/* Badge */}
-          <motion.div variants={fadeUp}>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(255,255,255,0.75)', backdropFilter: 'blur(12px)', border: '1px solid rgba(0,0,0,0.07)', fontSize: '0.78rem', fontWeight: 600, color: '#475569', padding: '6px 16px', borderRadius: 999, boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#059669', flexShrink: 0, boxShadow: '0 0 0 3px rgba(5,150,105,0.15)' }} />
-              engineers already tracking
-            </span>
-          </motion.div>
-
-          {/* Headline */}
-          <motion.h1
-            variants={fadeUp}
-            style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 'clamp(2.6rem, 6vw, 5rem)', lineHeight: 1.05, letterSpacing: '-0.03em', color: '#0F172A', maxWidth: 780 }}
-          >
-            Stop reading dashboards.{' '}
-            <span style={{ color: '#F47B20', fontStyle: 'italic' }}>Start understanding users.</span>
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p
-            variants={fadeUp}
-            style={{ fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', color: '#64748B', lineHeight: 1.7, maxWidth: 520, fontWeight: 400 }}
-          >
-            Advaita captures every user action and uses AI to explain what
-            it means — no dashboards to build, no SQL to write.
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div variants={fadeUp} style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
-            <motion.a
-              href="#waitlist"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 28px', background: '#0F172A', color: '#fff', borderRadius: 10, fontWeight: 600, fontSize: '0.925rem', textDecoration: 'none', boxShadow: '0 4px 18px rgba(15,23,42,0.18)', transition: 'background 0.15s', whiteSpace: 'nowrap' }}
-              onMouseEnter={e => e.currentTarget.style.background = '#1E293B'}
-              onMouseLeave={e => e.currentTarget.style.background = '#0F172A'}
-            >
-              Get early access
-              <span style={{ color: '#F47B20', fontSize: '1.1rem' }}>→</span>
-            </motion.a>
-            <motion.a
-              href="#contact"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.97 }}
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '14px 24px', background: '#fff', border: '1.5px solid rgba(0,0,0,0.12)', color: '#1E293B', borderRadius: 10, fontWeight: 500, fontSize: '0.925rem', textDecoration: 'none', transition: 'border-color 0.15s, background 0.15s', whiteSpace: 'nowrap' }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(0,0,0,0.24)'; e.currentTarget.style.background = '#F8FAFC' }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(0,0,0,0.12)'; e.currentTarget.style.background = '#fff' }}
-            >
-              Talk to sales
-            </motion.a>
-          </motion.div>
-
-          {/* Trust strip */}
-          <motion.div variants={fadeUp} style={{ display: 'flex', flexWrap: 'wrap', gap: 24, justifyContent: 'center', paddingBottom: 12 }}>
-            {[
-              { label: '99.9% uptime', color: '#059669' },
-              { label: '<5ms latency', color: '#4F46E5' },
-              { label: 'SOC2 certified', color: '#F47B20' },
-              { label: '5.0★ rating', color: '#F59E0B' },
-            ].map(({ label, color }) => (
-              <span key={label} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.8rem', color: '#94A3B8', fontWeight: 500 }}>
-                <span style={{ width: 5, height: 5, borderRadius: '50%', background: color, display: 'inline-block' }} />
-                {label}
-              </span>
-            ))}
-          </motion.div>
-        </motion.div>
-
-        {/* Dashboard preview — full-width below text */}
-        <motion.div
-          initial={{ opacity: 0, y: 48 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          style={{ marginTop: 56, position: 'relative' }}
-        >
-          {/* Browser chrome wrapper */}
+        {/* Background layers — clipped to rounded corners */}
+        <div aria-hidden style={{ position: 'absolute', inset: 0, borderRadius: 8, overflow: 'hidden', pointerEvents: 'none' }}>
+          {/* Grid pattern */}
           <div style={{
-            background: '#fff', borderRadius: '20px 20px 0 0',
-            border: '1px solid rgba(0,0,0,0.08)', borderBottom: 'none',
-            boxShadow: '0 -4px 40px rgba(0,0,0,0.06), 0 40px 80px rgba(79,70,229,0.08)',
-            overflow: 'hidden',
-            maxWidth: 960, margin: '0 auto',
+            position: 'absolute', inset: 0,
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.032) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.032) 1px, transparent 1px)',
+            backgroundSize: '72px 72px',
+          }} />
+          {/* Orange radial glow — top right */}
+          <div style={{
+            position: 'absolute', inset: 0,
+            background: 'radial-gradient(ellipse at 78% 8%, rgba(244,123,32,0.18) 0%, transparent 52%)',
+          }} />
+          {/* Secondary glow — bottom left */}
+          <div style={{
+            position: 'absolute', inset: 0,
+            background: 'radial-gradient(ellipse at 5% 95%, rgba(244,123,32,0.07) 0%, transparent 40%)',
+          }} />
+        </div>
+
+        {/* Main content */}
+        <div style={{
+          flex: 1,
+          display: 'flex',
+          alignItems: 'stretch',
+          padding: '0 60px 72px',
+          gap: 48,
+          position: 'relative',
+          zIndex: 1,
+        }}>
+
+          {/* Left column: text anchored to bottom */}
+          <motion.div
+            variants={stagger} initial="hidden" animate="visible"
+            style={{
+              flex: '0 0 50%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-end',
+              paddingTop: 80,
+            }}
+          >
+            {/* Label */}
+            <motion.div variants={fadeUp} style={{ marginBottom: 20 }}>
+              <span style={{
+                fontSize: '0.7rem',
+                fontWeight: 700,
+                letterSpacing: '0.14em',
+                color: '#F47B20',
+                textTransform: 'uppercase',
+                fontFamily: "'Space Grotesk', sans-serif",
+              }}>
+                // Analytics Platform
+              </span>
+            </motion.div>
+
+            {/* Headline */}
+            <motion.h1
+              variants={fadeUp}
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontWeight: 800,
+                fontSize: 'clamp(3rem, 5vw, 5rem)',
+                lineHeight: 1.04,
+                letterSpacing: '-0.035em',
+                color: '#EDEAE2',
+                margin: '0 0 24px',
+              }}
+            >
+              Stop reading<br/>
+              dashboards.<br/>
+              <span style={{ color: '#F47B20' }}>Start understanding</span><br/>
+              your users.
+            </motion.h1>
+
+            {/* Subtitle */}
+            <motion.p
+              variants={fadeUp}
+              style={{
+                fontSize: '1.025rem',
+                color: 'rgba(237,234,226,0.48)',
+                lineHeight: 1.72,
+                margin: '0 0 40px',
+                maxWidth: 450,
+                fontWeight: 400,
+              }}
+            >
+              Advaita captures every user action and uses AI to explain what it means — no dashboards to build, no SQL to write. Self-hosted and open-source.
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div variants={fadeUp} style={{ display: 'flex', gap: 12, marginBottom: 44, flexWrap: 'wrap' }}>
+              <a href="#waitlist" style={{
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+                padding: '13px 28px', background: '#F47B20', color: '#fff',
+                borderRadius: 4, fontWeight: 700, fontSize: '0.875rem',
+                textDecoration: 'none', letterSpacing: '0.06em', textTransform: 'uppercase',
+                fontFamily: "'Space Grotesk', sans-serif",
+                transition: 'background 0.15s',
+              }}
+                onMouseEnter={e => e.currentTarget.style.background = '#E06910'}
+                onMouseLeave={e => e.currentTarget.style.background = '#F47B20'}
+              >
+                Get early access <span>→</span>
+              </a>
+              <a href="#contact" style={{
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+                padding: '13px 28px', background: 'transparent',
+                border: '1.5px solid rgba(237,234,226,0.2)', color: '#EDEAE2',
+                borderRadius: 4, fontWeight: 700, fontSize: '0.875rem',
+                textDecoration: 'none', letterSpacing: '0.06em', textTransform: 'uppercase',
+                fontFamily: "'Space Grotesk', sans-serif",
+                transition: 'border-color 0.15s',
+              }}
+                onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(237,234,226,0.45)'}
+                onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(237,234,226,0.2)'}
+              >
+                talk to sales <span>→</span>
+              </a>
+            </motion.div>
+
+            {/* Trust strip */}
+            <motion.div variants={fadeUp} style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
+              {[
+                { label: '99.9% uptime', color: '#34D399' },
+                { label: '<5ms latency', color: '#60A5FA' },
+                { label: 'SOC2 ready', color: '#F47B20' },
+                { label: 'Open source', color: '#A78BFA' },
+              ].map(({ label, color }) => (
+                <span key={label} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.76rem', color: 'rgba(237,234,226,0.32)', fontWeight: 500 }}>
+                  <span style={{ width: 4, height: 4, borderRadius: '50%', background: color, display: 'inline-block', flexShrink: 0 }} />
+                  {label}
+                </span>
+              ))}
+            </motion.div>
+          </motion.div>
+
+          {/* Right column: dashboard preview floating card */}
+          <div style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            paddingTop: 48,
+            paddingBottom: 24,
           }}>
-            {/* Browser top bar */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '12px 16px', borderBottom: '1px solid rgba(0,0,0,0.06)', background: '#F8FAFC' }}>
-              <div style={{ display: 'flex', gap: 6 }}>
-                {['#FF5F57','#FFBD2E','#28CA41'].map(c => (
-                  <div key={c} style={{ width: 11, height: 11, borderRadius: '50%', background: c }} />
-                ))}
+            <motion.div
+              initial={{ opacity: 0, y: 36, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 1, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              style={{
+                width: '100%',
+                maxWidth: 500,
+                background: '#161616',
+                border: '1px solid rgba(255,255,255,0.07)',
+                borderRadius: 8,
+                boxShadow: '0 32px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(244,123,32,0.05)',
+              }}
+            >
+              {/* Dark browser chrome */}
+              <div style={{
+                display: 'flex', alignItems: 'center', gap: 8,
+                padding: '10px 14px',
+                borderBottom: '1px solid rgba(255,255,255,0.05)',
+                background: '#111111',
+              }}>
+                <div style={{ display: 'flex', gap: 5 }}>
+                  {['#FF5F57', '#FFBD2E', '#28CA41'].map(c => (
+                    <div key={c} style={{ width: 9, height: 9, borderRadius: '50%', background: c, opacity: 0.65 }} />
+                  ))}
+                </div>
+                <div style={{
+                  flex: 1, height: 20,
+                  background: 'rgba(255,255,255,0.04)',
+                  borderRadius: 4, display: 'flex', alignItems: 'center', paddingLeft: 8,
+                }}>
+                  <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.22)', fontFamily: 'monospace' }}>
+                    acaiplatform.ai/dashboard
+                  </span>
+                </div>
               </div>
-              <div style={{ flex: 1, height: 24, background: '#EEF2F7', borderRadius: 6, display: 'flex', alignItems: 'center', paddingLeft: 10, gap: 6 }}>
-                <svg viewBox="0 0 16 16" fill="none" stroke="#94A3B8" strokeWidth="1.5" width="10" height="10"><circle cx="7" cy="7" r="5"/><path d="M12 12l-2-2"/></svg>
-                <span style={{ fontSize: 11, color: '#94A3B8', fontFamily: 'monospace' }}>acaiplatform.ai/dashboard</span>
+              {/* Dashboard content */}
+              <div style={{ padding: 20, background: '#141414' }}>
+                <DashboardPreview />
               </div>
-            </div>
-            {/* Dashboard content */}
-            <div style={{ padding: 28, background: '#F8FAFC' }}>
-              <DashboardPreview />
-            </div>
+            </motion.div>
           </div>
-          {/* Bottom fade into page */}
-          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 80, background: 'linear-gradient(to top, #FAFAF8, transparent)', pointerEvents: 'none' }} />
-        </motion.div>
+        </div>
       </div>
     </section>
   )

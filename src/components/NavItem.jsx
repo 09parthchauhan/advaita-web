@@ -12,7 +12,7 @@ export function NavItem({ item }) {
     <div style={{ position: 'relative' }} onMouseEnter={show} onMouseLeave={hide}>
       <button style={{
         display: 'flex', alignItems: 'center', gap: 4,
-        fontSize: '0.875rem', fontWeight: 500, color: open ? '#111' : '#475569',
+        fontSize: '1.05rem', fontWeight: 600, color: open ? '#111' : '#475569',
         background: 'none', border: 'none', cursor: 'pointer', padding: '8px 2px',
         transition: 'color 0.15s', fontFamily: 'inherit',
       }}>

@@ -1,7 +1,7 @@
 export function Logo({ size = 'md' }) {
   const cfg = {
-    sm: { outer: 30, mid: 19, inner: 10 },
-    md: { outer: 42, mid: 27, inner: 13 },
+    sm: { outer: 38, mid: 24, inner: 12 },
+    md: { outer: 48, mid: 31, inner: 15 },
     lg: { outer: 56, mid: 36, inner: 18 },
   }[size]
   return (

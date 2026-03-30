@@ -47,7 +47,7 @@ export function WaitlistCTA() {
                 onChange={e => setEmail(e.target.value)}
                 placeholder="you@company.com"
                 required
-                style={{ flex: 1, minWidth: 220, padding: '14px 20px', background: '#fff', border: '1.5px solid rgba(0,0,0,0.1)', borderRadius: 999, fontSize: '0.9rem', color: '#111', outline: 'none', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', fontFamily: 'inherit', transition: 'border-color 0.2s' }}
+                style={{ flex: 1, minWidth: 220, padding: '14px 20px', background: '#fff', border: '1.5px solid rgba(0,0,0,0.1)', borderRadius: 4, fontSize: '0.9rem', color: '#111', outline: 'none', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', fontFamily: 'inherit', transition: 'border-color 0.2s' }}
                 onFocus={e => e.target.style.borderColor = '#F47B20'}
                 onBlur={e => e.target.style.borderColor = 'rgba(0,0,0,0.1)'}
               />
@@ -55,7 +55,7 @@ export function WaitlistCTA() {
                 type="submit"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                style={{ padding: '14px 28px', background: '#F47B20', color: '#fff', border: 'none', borderRadius: 999, fontSize: '0.9rem', fontWeight: 600, cursor: 'pointer', boxShadow: '0 4px 18px rgba(244,123,32,0.28)', whiteSpace: 'nowrap', fontFamily: 'inherit' }}
+                style={{ padding: '14px 28px', background: '#F47B20', color: '#fff', border: 'none', borderRadius: 4, fontSize: '0.9rem', fontWeight: 600, cursor: 'pointer', boxShadow: '0 4px 18px rgba(244,123,32,0.28)', whiteSpace: 'nowrap', fontFamily: 'inherit' }}
               >
                 Get early access
               </motion.button>

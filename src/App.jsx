@@ -29,10 +29,10 @@ export default function App({ onLogin }) {
   const offset = bannerVisible ? bannerHeight : 0
 
   return (
-    <div className="grain" style={{ minHeight: '100vh', background: '#FAFAF8' }}>
+    <div className="grain" style={{ minHeight: '100vh', background: '#F0EEE8' }}>
       {bannerVisible && <AnnouncementBanner ref={bannerRef} onDismiss={() => setBannerVisible(false)} />}
       <Navbar offsetTop={offset} onLogin={onLogin} />
-      <main style={{ paddingTop: offset }}>
+      <main style={{ paddingTop: offset + 76 }}>
         <Hero />
         <FunnelPreview />
         <ChatbotPreview />
