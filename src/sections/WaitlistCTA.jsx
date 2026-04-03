@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 const API_URL = 'https://advaita-platform.onrender.com'
@@ -8,6 +8,15 @@ export function WaitlistCTA() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [position, setPosition] = useState(null)
+  const [count, setCount] = useState(null)
+
+  useEffect(() => {
+    fetch(`${API_URL}/v1/waitlist/count`)
+      .then(r => r.json())
+      .then(d => setCount(d.count))
+      .catch(() => {})
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -22,6 +31,8 @@ export function WaitlistCTA() {
       })
       const data = await res.json()
       if (!res.ok) throw new Error(data.detail || 'Something went wrong')
+      setPosition(data.position)
+      setCount(data.position)
       setSubmitted(true)
     } catch (err) {
       setError(err.message)
@@ -42,7 +53,7 @@ export function WaitlistCTA() {
           style={{ display: 'inline-flex', alignItems: 'center', gap: 7, background: '#fff', border: '1px solid rgba(0,0,0,0.07)', fontSize: '0.78rem', fontWeight: 600, color: '#64748B', padding: '6px 14px', borderRadius: 999, marginBottom: 28, boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}
         >
           <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#F47B20' }} />
-          Limited early access — join now
+          {count !== null ? `${count} people ahead — join now` : 'Limited early access — join now'}
         </motion.div>
 
         <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.08 }}
@@ -84,12 +95,19 @@ export function WaitlistCTA() {
           ) : (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: '#ECFDF5', border: '1px solid rgba(5,150,105,0.2)', color: '#059669', fontWeight: 600, fontSize: '0.9rem', padding: '14px 24px', borderRadius: 16, maxWidth: 360 }}
+              style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: 8, background: '#ECFDF5', border: '1px solid rgba(5,150,105,0.2)', color: '#059669', fontWeight: 600, fontSize: '0.9rem', padding: '20px 32px', borderRadius: 16, maxWidth: 360 }}
             >
-              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
-                <polyline points="16 5 8 13 4 9" />
-              </svg>
-              You're on the list! We'll be in touch soon.
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+                  <polyline points="16 5 8 13 4 9" />
+                </svg>
+                You're on the list!
+              </div>
+              {position && (
+                <span style={{ fontSize: '0.8rem', color: '#047857', fontWeight: 500 }}>
+                  You're #{position} in line — check your email for confirmation.
+                </span>
+              )}
             </motion.div>
           )}
           {error && <p style={{ fontSize: '0.82rem', color: '#EF4444', marginTop: 10 }}>{error}</p>}
