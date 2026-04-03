@@ -1,13 +1,33 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
+const API_URL = 'https://advaita-platform.onrender.com'
+
 export function WaitlistCTA() {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    if (email) setSubmitted(true)
+    if (!email) return
+    setLoading(true)
+    setError('')
+    try {
+      const res = await fetch(`${API_URL}/v1/waitlist`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.detail || 'Something went wrong')
+      setSubmitted(true)
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -53,11 +73,12 @@ export function WaitlistCTA() {
               />
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                style={{ padding: '14px 28px', background: '#F47B20', color: '#fff', border: 'none', borderRadius: 4, fontSize: '0.9rem', fontWeight: 600, cursor: 'pointer', boxShadow: '0 4px 18px rgba(244,123,32,0.28)', whiteSpace: 'nowrap', fontFamily: 'inherit' }}
+                disabled={loading}
+                whileHover={{ scale: loading ? 1 : 1.03 }}
+                whileTap={{ scale: loading ? 1 : 0.97 }}
+                style={{ padding: '14px 28px', background: '#F47B20', color: '#fff', border: 'none', borderRadius: 4, fontSize: '0.9rem', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1, boxShadow: '0 4px 18px rgba(244,123,32,0.28)', whiteSpace: 'nowrap', fontFamily: 'inherit' }}
               >
-                Get early access
+                {loading ? 'Joining...' : 'Get early access'}
               </motion.button>
             </form>
           ) : (
@@ -71,6 +92,7 @@ export function WaitlistCTA() {
               You're on the list! We'll be in touch soon.
             </motion.div>
           )}
+          {error && <p style={{ fontSize: '0.82rem', color: '#EF4444', marginTop: 10 }}>{error}</p>}
           <p style={{ fontSize: '0.78rem', color: '#94A3B8', marginTop: 14 }}>No spam. Unsubscribe anytime. SOC2 compliant.</p>
         </motion.div>
       </div>
