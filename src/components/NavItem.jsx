@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-export function NavItem({ item }) {
+export function NavItem({ item, onPricing }) {
   const [open, setOpen] = useState(false)
   const timerRef = useRef(null)
 
@@ -49,6 +49,7 @@ export function NavItem({ item }) {
               <a key={l.label} href="#" style={{ display: 'flex', flexDirection: 'column', gap: 2, padding: '9px 12px', borderRadius: 9, textDecoration: 'none', transition: 'background 0.12s' }}
                 onMouseEnter={e => e.currentTarget.style.background = '#F8FAFC'}
                 onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                onClick={e => { e.preventDefault(); if (onPricing) { onPricing(); setOpen(false) } }}
               >
                 <span style={{ fontSize: '0.84rem', fontWeight: 600, color: '#111', lineHeight: 1.3 }}>{l.label}</span>
                 <span style={{ fontSize: '0.76rem', color: '#94A3B8', lineHeight: 1.4 }}>{l.desc}</span>

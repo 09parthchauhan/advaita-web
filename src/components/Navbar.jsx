@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Logo } from './Logo.jsx'
 import { NavItem } from './NavItem.jsx'
 import { NAV_ITEMS } from '../constants/index.jsx'
+import logoImg from '../assets/Logo.jpeg'
 
-export function Navbar({ offsetTop = 0, onLogin }) {
+export function Navbar({ offsetTop = 0, onLogin, onPricing }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [mobileSection, setMobileSection] = useState(null)
@@ -35,7 +35,11 @@ export function Navbar({ offsetTop = 0, onLogin }) {
 
         {/* Logo + wordmark */}
         <a href="#" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none', flexShrink: 0 }}>
-          <Logo size="sm" />
+          <img
+            src={logoImg}
+            alt="Advaita logo"
+            style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover', background: 'none' }}
+          />
           <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.3rem', color: '#111111', letterSpacing: '-0.01em' }}>
             ADVAITA
           </span>
@@ -43,7 +47,7 @@ export function Navbar({ offsetTop = 0, onLogin }) {
 
         {/* Desktop nav links */}
         <div className="lp-nav-links" style={{ display: 'flex', gap: 24 }}>
-          {NAV_ITEMS.map(item => <NavItem key={item.label} item={item} />)}
+          {NAV_ITEMS.map(item => <NavItem key={item.label} item={item} onPricing={item.label === 'Pricing' ? onPricing : undefined} />)}
         </div>
 
         {/* Desktop CTAs */}
@@ -114,6 +118,7 @@ export function Navbar({ offsetTop = 0, onLogin }) {
                 </div>
               ))}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10, paddingTop: 16, marginTop: 8, borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+                <a href="#pricing" onClick={e => { e.preventDefault(); setMenuOpen(false); onPricing && onPricing() }} style={{ textAlign: 'center', padding: '11px 20px', border: '1.5px solid rgba(0,0,0,0.14)', borderRadius: 4, fontSize: '0.875rem', fontWeight: 600, color: '#111', textDecoration: 'none' }}>Pricing</a>
                 <a href="#contact" style={{ textAlign: 'center', padding: '11px 20px', border: '1.5px solid rgba(0,0,0,0.14)', borderRadius: 4, fontSize: '0.875rem', fontWeight: 600, color: '#111', textDecoration: 'none' }}>Contact Sales</a>
                 <a href="#waitlist" style={{ textAlign: 'center', padding: '11px 20px', background: '#111', borderRadius: 4, fontSize: '0.875rem', fontWeight: 700, color: '#F0EEE8', textDecoration: 'none' }}>Get started free</a>
               </div>

@@ -48,7 +48,7 @@ export const AnnouncementBanner = forwardRef(function AnnouncementBanner({ onDis
       }}>
         <span style={{ fontSize: '0.75rem', color: 'rgba(240,235,224,0.5)', fontWeight: 400 }}>🎉</span>
         <span style={{ fontSize: '0.78rem', color: 'rgba(240,235,224,0.75)', fontWeight: 400 }}>
-          Raised&nbsp;<span style={{ color: '#1A7A2E', fontWeight: 700 }}>₹4.5L</span>&nbsp;through&nbsp;<span style={{ fontWeight: 600, color: 'rgba(240,235,224,0.9)' }}>iHub</span>
+          Backed by&nbsp;<span style={{ fontWeight: 700, color: '#F5D000' }}>iHub</span>
         </span>
       </span>
 

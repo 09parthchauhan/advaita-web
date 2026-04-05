@@ -11,7 +11,7 @@ import { MetricsBar } from './sections/MetricsBar.jsx'
 import { WaitlistCTA } from './sections/WaitlistCTA.jsx'
 import { Footer } from './sections/Footer.jsx'
 
-export default function App({ onLogin }) {
+export default function App({ onLogin, onPricing }) {
   const [bannerVisible, setBannerVisible] = useState(true)
   const [bannerHeight, setBannerHeight] = useState(38)
   const bannerRef = useRef(null)
@@ -31,7 +31,7 @@ export default function App({ onLogin }) {
   return (
     <div className="grain" style={{ minHeight: '100vh', background: '#F0EEE8' }}>
       {bannerVisible && <AnnouncementBanner ref={bannerRef} onDismiss={() => setBannerVisible(false)} />}
-      <Navbar offsetTop={offset} onLogin={onLogin} />
+      <Navbar offsetTop={offset} onLogin={onLogin} onPricing={onPricing} />
       <main style={{ paddingTop: offset + 76 }}>
         <Hero />
         <FunnelPreview />

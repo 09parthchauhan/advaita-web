@@ -1,5 +1,5 @@
-import { Logo } from '../components/Logo.jsx'
 import { FOOTER_LINKS } from '../constants/index.jsx'
+import logoImg from '../assets/Logo.jpeg'
 
 export function Footer() {
   return (
@@ -10,7 +10,11 @@ export function Footer() {
           {/* Brand column */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
-              <Logo size="md" />
+              <img
+                src={logoImg}
+                alt="Advaita logo"
+                style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover', background: 'none' }}
+              />
               <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.2rem', color: '#F0EBE0' }}>Advaita</span>
             </div>
             <p style={{ fontSize: '0.875rem', color: 'rgba(240,235,224,0.45)', lineHeight: 1.65, maxWidth: 240 }}>
