@@ -15,7 +15,7 @@ export function Footer() {
                 alt="Advaita logo"
                 style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover', background: 'none' }}
               />
-              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.2rem', color: '#F0EBE0' }}>Advaita</span>
+              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.2rem', color: '#F0EBE0' }}>Advaita Intelligenceua</span>
             </div>
             <p style={{ fontSize: '0.875rem', color: 'rgba(240,235,224,0.45)', lineHeight: 1.65, maxWidth: 240 }}>
               AI-powered clickstream analytics. Open source, self-hosted, and built for engineering teams.
@@ -64,7 +64,7 @@ export function Footer() {
 
         {/* Divider */}
         <div style={{ borderTop: '1px solid rgba(240,235,224,0.06)', paddingTop: 16, paddingBottom: 12, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
-          <span style={{ fontSize: '0.78rem', color: 'rgba(240,235,224,0.3)' }}>© 2026 Advaita Inc. All rights reserved.</span>
+          <span style={{ fontSize: '0.78rem', color: 'rgba(240,235,224,0.3)' }}>© 2026 Advaita Intelligence Private Limited.</span>
           <div style={{ display: 'flex', gap: 24 }}>
             {['Privacy', 'Terms', 'Status', 'Security'].map(l => (
               <a key={l} href="#" style={{ fontSize: '0.78rem', color: 'rgba(240,235,224,0.3)', textDecoration: 'none', transition: 'color 0.2s' }}
