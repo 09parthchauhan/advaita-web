@@ -15,7 +15,7 @@ export function Footer() {
                 alt="Advaita logo"
                 style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover', background: 'none' }}
               />
-              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.2rem', color: '#F0EBE0' }}>Advaita Intelligenceua</span>
+              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.2rem', color: '#F0EBE0' }}>Advaita Intelligence</span>
             </div>
             <p style={{ fontSize: '0.875rem', color: 'rgba(240,235,224,0.45)', lineHeight: 1.65, maxWidth: 240 }}>
               AI-powered clickstream analytics. Open source, self-hosted, and built for engineering teams.
