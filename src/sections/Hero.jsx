@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { stagger, fadeUp } from '../constants/index.jsx'
+import './Hero.css'
 
 /* ── Single vertical dashboard preview ─────────────────────── */
 
@@ -329,31 +330,7 @@ export function Hero() {
             background: '#ffffff',
           }}
         >
-          <style>{`
-  .hero-left-grid::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
-    background-size: 36px 36px;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .hero-left-grid::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 75% 75% at 38% 50%, rgba(255,255,255,0.65) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 1;
-  }
-  .hero-left-grid > * {
-    position: relative;
-    z-index: 2;
-  }
-`}</style>
+          <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', width: '100%' }}>
           {/* Badge */}
           <motion.div variants={fadeUp} style={{ marginBottom: 24 }}>
             <span style={{
@@ -448,6 +425,7 @@ export function Hero() {
               </span>
             ))}
           </motion.div>
+          </div>
         </motion.div>
 
         {/* ── Right column (50%) — orange gradient bg ── */}
@@ -541,30 +519,6 @@ export function Hero() {
         </div>
       </div>
 
-      <style>{`
-        @keyframes orbFloat1 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33%       { transform: translate(-20px, 15px) scale(1.05); }
-          66%       { transform: translate(10px, -10px) scale(0.97); }
-        }
-        @keyframes orbFloat2 {
-          0%, 100% { transform: translate(0, 0); }
-          50%       { transform: translate(15px, -20px); }
-        }
-        @keyframes orbFloat3 {
-          0%, 100% { transform: translate(0, 0); }
-          50%       { transform: translate(-10px, 12px); }
-        }
-        @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50%       { opacity: 0.4; }
-        }
-        @media (max-width: 820px) {
-          .hero-split { flex-direction: column !important; }
-          .hero-right { border-radius: 0 !important; min-height: 360px !important; flex: none !important; }
-          .hero-left  { flex: none !important; }
-        }
-      `}</style>
     </section>
   )
 }
