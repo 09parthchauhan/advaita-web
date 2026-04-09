@@ -293,7 +293,7 @@ export function Hero() {
           {/* Canvas animation fills the panel */}
           <ClothCanvas />
 
-          {/* Left edge vignette — blends into white left panel */}
+          {/* Left edge vignette — softens the seam with the left panel */}
           <div style={{
             position: 'absolute', top: 0, left: 0, bottom: 0, width: 80,
             background: 'linear-gradient(to right, #080808, transparent)',
