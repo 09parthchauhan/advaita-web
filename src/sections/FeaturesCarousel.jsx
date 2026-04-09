@@ -390,7 +390,7 @@ function FeatureList({ activeIndex }) {
             {/* Text */}
             <div style={{ paddingLeft: 24 }}>
               <div style={{
-                fontSize: isActive ? '0.9rem' : '0.86rem',
+                fontSize: isActive ? '1.05rem' : '1rem',
                 fontWeight: isActive ? 700 : 600,
                 color: isActive ? '#1A7A2E' : '#374151',
                 opacity: isActive ? 1 : 0.38,
@@ -402,7 +402,7 @@ function FeatureList({ activeIndex }) {
               </div>
               {isActive && (
                 <div style={{
-                  fontSize: '0.72rem',
+                  fontSize: '0.82rem',
                   color: '#4ade80',
                   fontWeight: 500,
                   marginTop: 3,
@@ -576,7 +576,7 @@ export function FeaturesCarousel() {
             }}>
               Turn Complex Data Into Clear, Confident Decisions
               <span style={{ color: '#999999', fontWeight: 500 }}>
-                {' '}— Empowering Your Team With Insights That Drive Real Business Growth.
+                {' '}— From raw events to deep behavioral insights.
               </span>
             </h2>
           </div>
