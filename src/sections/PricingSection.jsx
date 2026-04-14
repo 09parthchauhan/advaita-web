@@ -9,7 +9,6 @@ const PRICES = {
   Max:    { monthly: 100000, quarterly: 75000, annually: 60000 },
 }
 
-const AI_CREDITS = { Basic: '2,000', Pro: '5,000', Max: '10,000' }
 
 const FEATURES = {
   Basic: [
@@ -62,17 +61,23 @@ function formatINR(amount) {
 
 function BillingToggle({ cycle, onChange }) {
   return (
-    <div style={{
-      display: 'flex',
-      width: 'fit-content',
-      margin: '0 auto 40px',
-      border: '1px solid rgba(255,255,255,0.1)',
-      borderRadius: 10,
-      overflow: 'hidden',
-    }}>
+    <div
+      role="group"
+      aria-label="Billing cycle"
+      style={{
+        display: 'flex',
+        width: 'fit-content',
+        margin: '0 auto 40px',
+        border: '1px solid rgba(255,255,255,0.1)',
+        borderRadius: 10,
+        overflow: 'hidden',
+      }}
+    >
       {CYCLES.map((c) => (
         <button
           key={c}
+          type="button"
+          aria-pressed={cycle === c}
           onClick={() => onChange(c)}
           style={{
             fontFamily: "'Manrope', sans-serif",
@@ -311,7 +316,6 @@ export function PricingSection() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: '1fr 1fr 1fr',
             gap: 20,
             alignItems: 'stretch',
             maxWidth: 1100,
@@ -343,11 +347,12 @@ export function PricingSection() {
       </div>
 
       <style>{`
+        .pricing-cards-grid { grid-template-columns: 1fr 1fr 1fr; }
         @media (max-width: 860px) {
-          .pricing-cards-grid { grid-template-columns: 1fr !important; }
+          .pricing-cards-grid { grid-template-columns: 1fr; }
         }
         @media (min-width: 861px) and (max-width: 1060px) {
-          .pricing-cards-grid { grid-template-columns: 1fr 1fr !important; }
+          .pricing-cards-grid { grid-template-columns: 1fr 1fr; }
         }
       `}</style>
     </section>
