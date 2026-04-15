@@ -98,7 +98,7 @@ export function CTABanner() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
               style={{
-                fontFamily: "'Space Grotesk', sans-serif",
+                fontFamily: "'Manrope', sans-serif",
                 fontWeight: 900,
                 fontSize: 'clamp(1.9rem, 4vw, 3.2rem)',
                 color: '#111111',
@@ -152,7 +152,7 @@ export function CTABanner() {
                   fontSize: '0.875rem',
                   textDecoration: 'none',
                   letterSpacing: '0.04em',
-                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontFamily: "'Manrope', sans-serif",
                   transition: 'background 0.15s',
                   whiteSpace: 'nowrap',
                 }}
@@ -174,7 +174,7 @@ export function CTABanner() {
                   fontSize: '0.875rem',
                   textDecoration: 'none',
                   letterSpacing: '0.04em',
-                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontFamily: "'Manrope', sans-serif",
                   transition: 'background 0.15s',
                   whiteSpace: 'nowrap',
                 }}

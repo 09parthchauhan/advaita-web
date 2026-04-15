@@ -180,7 +180,7 @@ function PricingCard({ tier, cycle, featured, delay }) {
       </div>
 
       <div style={{
-        fontFamily: "'Space Grotesk', sans-serif",
+        fontFamily: "'Manrope', sans-serif",
         fontWeight: 700,
         fontSize: '2.2rem',
         color: '#F0EBE0',
@@ -285,7 +285,7 @@ export function PricingSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             style={{
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "'Manrope', sans-serif",
               fontWeight: 700,
               fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
               color: '#F0EBE0',

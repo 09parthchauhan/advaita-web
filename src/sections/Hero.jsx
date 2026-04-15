@@ -6,11 +6,11 @@ import './Hero.css'
 export function Hero() {
   return (
     <section style={{ background: '#ffffff', minHeight: '90vh', display: 'flex', alignItems: 'stretch', overflow: 'hidden', width: '100%' }}>
-      <div style={{ display: 'flex', width: '100%', minHeight: '90vh', alignItems: 'stretch' }}>
+      <div className="hero-outer-row" style={{ display: 'flex', width: '100%', minHeight: '90vh', alignItems: 'stretch' }}>
 
         {/* ── Left column (50%) ── */}
         <motion.div
-          className="hero-left-grid"
+          className="hero-left-grid hero-col-left"
           variants={stagger} initial="hidden" animate="visible"
           style={{
             flex: '0 0 50%',
@@ -155,7 +155,7 @@ export function Hero() {
         </motion.div>
 
         {/* ── Right column (50%) — animated orbs ── */}
-        <div style={{
+        <div className="hero-col-right" style={{
           flex: '0 0 50%',
           width: '50%',
           position: 'relative',

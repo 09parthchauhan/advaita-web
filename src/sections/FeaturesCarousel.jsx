@@ -517,6 +517,7 @@ function FeaturePreview({ activeIndex }) {
 export function FeaturesCarousel() {
   const sectionRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
 
   useEffect(() => {
     const onScroll = () => {
@@ -530,6 +531,71 @@ export function FeaturesCarousel() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  if (isMobile) {
+    return (
+      <section style={{ background: '#ffffff', padding: '64px 0 48px' }}>
+        <div style={{ maxWidth: 480, margin: '0 auto', padding: '0 20px' }}>
+          <div style={{ textAlign: 'center', marginBottom: 40 }}>
+            <span style={{
+              fontSize: '0.68rem', fontWeight: 600, color: '#F47B20',
+              textTransform: 'uppercase', letterSpacing: '0.12em',
+              fontFamily: "'Manrope', sans-serif",
+            }}>
+              What Advaita Does
+            </span>
+            <h2 style={{
+              fontFamily: "'Manrope', sans-serif",
+              fontWeight: 800,
+              fontSize: 'clamp(1.6rem, 6vw, 2rem)',
+              color: '#111111',
+              margin: '12px 0 0',
+              letterSpacing: '-0.025em',
+              lineHeight: 1.25,
+            }}>
+              Everything you need to understand your users
+            </h2>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            {FEATURES.map((feature, i) => (
+              <div key={i} style={{
+                border: '1px solid #E5E7EB',
+                borderRadius: 12,
+                padding: '20px',
+                background: '#FAFAF8',
+              }}>
+                <div style={{
+                  fontSize: '0.65rem', fontWeight: 700, color: '#F47B20',
+                  textTransform: 'uppercase', letterSpacing: '0.08em',
+                  fontFamily: "'Manrope', sans-serif", marginBottom: 6,
+                }}>
+                  {String(i + 1).padStart(2, '0')}
+                </div>
+                <div style={{
+                  fontSize: '1rem', fontWeight: 700, color: '#111111',
+                  fontFamily: "'Manrope', sans-serif", marginBottom: 6,
+                }}>
+                  {feature.name}
+                </div>
+                <div style={{
+                  fontSize: '0.875rem', color: '#6B7280',
+                  fontFamily: "'Manrope', sans-serif", lineHeight: 1.6,
+                }}>
+                  {feature.desc}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section style={{ background: '#ffffff' }}>

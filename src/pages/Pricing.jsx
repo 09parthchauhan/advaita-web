@@ -11,69 +11,70 @@ const BILLING_CYCLES = [
 
 const PLANS = [
   {
-    key: 'free',
-    name: 'Free',
-    tagline: 'For side projects and personal use.',
+    key: 'starter',
+    name: 'Basic',
+    tagline: 'Perfect for indie developers getting started with analytics.',
     highlight: false,
     prices: {
       monthly:   { amount: 0,      billing: null },
       annually:  { amount: 0,      billing: null },
       quarterly: { amount: 0,      billing: null },
     },
-    cta: 'Get started free',
+    cta: 'Get Advaita ',
     ctaStyle: 'outline',
     features: [
-      '100,000 events / month',
-      '1 project',
+      'Up to 100K events/mo',
+      '3 team members',
       'Funnels & retention',
       'User explorer',
-      '7-day data retention',
+      '30-day data retention',
       'Community support',
+      'Self-hosted',
     ],
   },
   {
     key: 'growth',
-    name: 'Growth',
-    tagline: 'For startups shipping fast and learning faster.',
+    name: 'Pro',
+    tagline: 'Built for scaling teams that need deeper insights and control.',
     highlight: true,
     badge: 'Most popular',
     prices: {
-      monthly:   { amount: 20000,  billing: null },
-      annually:  { amount: 12000,  billing: '₹1,44,000 billed annually' },
-      quarterly: { amount: 15000,  billing: '₹45,000 billed every 3 months' },
+      monthly:   { amount: 29,     billing: null },
+      annually:  { amount: 18,     billing: '$216 billed annually' },
+      quarterly: { amount: 23,     billing: '$69 billed every 3 months' },
     },
-    cta: 'Start free trial',
+    cta: 'Get Advaita Pro',
     ctaStyle: 'primary',
     features: [
+      'Everything in Basic',
       'Unlimited events',
-      'Up to 5 projects',
-      'Funnels, retention & journeys',
-      'AI anomaly detection',
-      'DS Bot — natural language queries',
+      'Unlimited team members',
       '1-year data retention',
-      'Email + Slack support',
+      'AI-powered insights',
+      'Priority support',
+      'Advanced funnels & cohorts',
+      'API access',
     ],
   },
   {
-    key: 'scale',
-    name: 'Scale',
-    tagline: 'Enterprise-grade power for high-volume products.',
+    key: 'enterprise',
+    name: 'Max',
+    tagline: 'Tailored solutions for organizations with advanced needs.',
     highlight: false,
     prices: {
-      monthly:   { amount: 100000, billing: null },
-      annually:  { amount: 60000,  billing: '₹7,20,000 billed annually' },
-      quarterly: { amount: 75000,  billing: '₹2,25,000 billed every 3 months' },
+      monthly:   { amount: null,   billing: null },
+      annually:  { amount: null,   billing: null },
+      quarterly: { amount: null,   billing: null },
     },
-    cta: 'Contact sales',
+    cta: 'Get Advaita Max',
     ctaStyle: 'outline',
     features: [
-      'Everything in Growth',
-      'Dedicated infrastructure',
-      'Custom event schemas',
-      'Advanced user segmentation',
-      'SLA guarantee (99.99% uptime)',
-      'Unlimited data retention',
-      'Dedicated support engineer',
+      'Everything in Pro',
+      'Dedicated support',
+      'SLA guarantee',
+      'SSO & SAML',
+      'Custom retention',
+      'On-premise deployment',
     ],
   },
 ]
@@ -103,10 +104,10 @@ const FAQS = [
 
 /* ─── Helpers ───────────────────────────────────────────────── */
 
-function formatINR(amount) {
+function formatPrice(amount) {
+  if (amount === null) return 'Custom'
   if (amount === 0) return 'Free'
-  if (amount >= 100000) return `₹${(amount / 100000).toFixed(amount % 100000 === 0 ? 0 : 1)} L`
-  return `₹${amount.toLocaleString('en-IN')}`
+  return `$${amount}`
 }
 
 /* ─── Sub-components ────────────────────────────────────────── */
@@ -160,7 +161,7 @@ export default function Pricing({ onBack }) {
   const [cycle, setCycle] = useState('monthly')
 
   const handleCta = (plan) => {
-    if (plan.key === 'scale') {
+    if (plan.key === 'enterprise') {
       window.location.hash = '#contact'
     } else {
       window.location.hash = '#waitlist'
@@ -195,7 +196,7 @@ export default function Pricing({ onBack }) {
         }}>
           <a href="#" onClick={e => { e.preventDefault(); onBack && onBack() }} style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
             <img src={logoImg} alt="Advaita logo" style={{ width: 36, height: 36, borderRadius: '50%', mixBlendMode: 'lighten', objectFit: 'cover' }} />
-            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.15rem', color: '#F0EBE0', letterSpacing: '0.02em' }}>ADVAITA</span>
+            <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 700, fontSize: '1.15rem', color: '#F0EBE0', letterSpacing: '0.02em' }}>ADVAITA</span>
           </a>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
@@ -232,7 +233,7 @@ export default function Pricing({ onBack }) {
         </div>
 
         <h1 style={{
-          fontFamily: "'Space Grotesk', sans-serif",
+          fontFamily: "'Manrope', sans-serif",
           fontWeight: 900,
           fontSize: 'clamp(2.4rem, 5vw, 3.6rem)',
           color: '#F0EBE0',
@@ -323,7 +324,7 @@ export default function Pricing({ onBack }) {
                 )}
 
                 <div style={{
-                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontFamily: "'Manrope', sans-serif",
                   fontWeight: 700,
                   fontSize: '1.3rem',
                   color: plan.highlight ? '#F47B20' : '#F0EBE0',
@@ -434,16 +435,16 @@ export default function Pricing({ onBack }) {
                 >
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: 4, marginBottom: 4 }}>
                     <span style={{
-                      fontFamily: "'Space Grotesk', sans-serif",
+                      fontFamily: "'Manrope', sans-serif",
                       fontWeight: 900,
-                      fontSize: price.amount === 0 ? '2rem' : '2.2rem',
+                      fontSize: price.amount === 0 || price.amount === null ? '2rem' : '2.2rem',
                       color: '#F0EBE0',
                       letterSpacing: '-0.02em',
                       lineHeight: 1,
                     }}>
-                      {formatINR(price.amount)}
+                      {formatPrice(price.amount)}
                     </span>
-                    {price.amount > 0 && (
+                    {price.amount !== null && price.amount > 0 && (
                       <span style={{ fontSize: '0.8rem', color: 'rgba(240,235,224,0.4)', fontFamily: "'Manrope', sans-serif" }}>
                         / mo
                       </span>
@@ -551,7 +552,7 @@ export default function Pricing({ onBack }) {
       {/* ── Included in all plans ──────────────────────────────── */}
       <section style={{ background: '#161616', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
         <div style={{ maxWidth: 1180, margin: '0 auto', padding: '56px 28px', textAlign: 'center' }}>
-          <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.6rem', color: '#F0EBE0', marginBottom: 8 }}>
+          <h2 style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 700, fontSize: '1.6rem', color: '#F0EBE0', marginBottom: 8 }}>
             Included in every plan
           </h2>
           <p style={{ fontSize: '0.875rem', color: 'rgba(240,235,224,0.45)', marginBottom: 36, fontFamily: "'Manrope', sans-serif" }}>
@@ -564,7 +565,6 @@ export default function Pricing({ onBack }) {
               { icon: '🔒', title: 'GDPR compliant',  desc: 'Privacy-first defaults, data deletion on request.' },
               { icon: '🌐', title: 'Self-hostable',   desc: 'Deploy on your own infra — 100% open source.' },
               { icon: '🤖', title: 'DS Bot',          desc: 'AI analyst built in, answers in plain English.' },
-              { icon: '📊', title: 'Unlimited events', desc: 'Track every event with no per-event caps.' },
               { icon: '🗄️', title: 'Data hosting',    desc: 'Managed storage on secure cloud infrastructure.' },
             ].map(item => (
               <div key={item.title} style={{ background: '#0E0E0E', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 14, padding: '22px 20px', textAlign: 'left' }}>
@@ -579,7 +579,7 @@ export default function Pricing({ onBack }) {
 
       {/* ── FAQ ────────────────────────────────────────────────── */}
       <section style={{ maxWidth: 720, margin: '0 auto', padding: '72px 28px 80px' }}>
-        <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.75rem', color: '#F0EBE0', marginBottom: 8, textAlign: 'center' }}>
+        <h2 style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 700, fontSize: '1.75rem', color: '#F0EBE0', marginBottom: 8, textAlign: 'center' }}>
           Frequently asked questions
         </h2>
         <p style={{ fontSize: '0.875rem', color: 'rgba(240,235,224,0.45)', textAlign: 'center', marginBottom: 40, fontFamily: "'Manrope', sans-serif" }}>
@@ -597,7 +597,7 @@ export default function Pricing({ onBack }) {
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 20 }}>
             <img src={logoImg} alt="Advaita" style={{ width: 52, height: 52, borderRadius: '50%', mixBlendMode: 'lighten', objectFit: 'cover' }} />
           </div>
-          <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 900, fontSize: 'clamp(1.8rem, 4vw, 2.4rem)', color: '#F0EBE0', margin: '0 0 14px', lineHeight: 1.2 }}>
+          <h2 style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 900, fontSize: 'clamp(1.8rem, 4vw, 2.4rem)', color: '#F0EBE0', margin: '0 0 14px', lineHeight: 1.2 }}>
             Start tracking in under 5 minutes
           </h2>
           <p style={{ fontSize: '0.975rem', color: 'rgba(240,235,224,0.5)', marginBottom: 32, lineHeight: 1.6, fontFamily: "'Manrope', sans-serif" }}>

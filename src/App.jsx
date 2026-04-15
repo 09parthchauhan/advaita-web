@@ -1,37 +1,44 @@
 import { Navbar } from './components/Navbar.jsx'
 import { Hero } from './sections/Hero.jsx'
+import { FeaturesCarousel } from './sections/FeaturesCarousel.jsx'
 import { SDKShowcase } from './sections/SDKShowcase.jsx'
-import { ProductCapabilities } from './sections/ProductCapabilities.jsx'
-import { WaitlistCTA } from './sections/WaitlistCTA.jsx'
+import { HowItWorks } from './sections/HowItWorks'
+import { PricingSection } from './sections/PricingSection.jsx'
 import { CTABanner } from './sections/CTABanner.jsx'
+import { WaitlistCTA } from './sections/WaitlistCTA.jsx'
 import { AnnouncementBanner } from './components/AnnouncementBanner.jsx'
 import { Footer } from './sections/Footer.jsx'
 
 export default function App({ onLogin, onPricing }) {
   return (
-    <div className="grain" style={{ minHeight: '100vh', background: '#F0EEE8' }}>
+    <div style={{ minHeight: '100vh', background: '#ffffff' }}>
       <Navbar offsetTop={0} onLogin={onLogin} onPricing={onPricing} />
-      <main style={{ paddingTop: 76 }}>
-        {/* 1. Hero */}
+      <main style={{ paddingTop: 72 }}>
+        {/* 1. Hero — split layout: heading left, dashboard preview right */}
         <Hero />
 
-        {/* 2. Product Capabilities — immediately after Hero */}
-        <ProductCapabilities />
+        {/* 2. Features Carousel — 3-card sliding carousel */}
+        <FeaturesCarousel />
 
-        {/* 3. SDK Code Section */}
+        {/* 3. SDK Code Snippet Section */}
         <SDKShowcase />
 
-        {/* 4. Waitlist form (preserved for conversions) */}
-        <WaitlistCTA />
+        <HowItWorks />
 
-        {/* 5. Orange CTA Banner */}
+        {/* 4. Pricing — inline on landing page */}
+        <PricingSection />
+
+        {/* 5. Growth Potential CTA — orange rounded banner */}
         <CTABanner />
+
+        {/* 6. Waitlist / email capture */}
+        <WaitlistCTA />
       </main>
 
-      {/* 6. Announcement Banner (iHub) */}
+      {/* 7. iHub Announcement Banner */}
       <AnnouncementBanner />
 
-      {/* 7. Footer */}
+      {/* 8. Footer */}
       <Footer />
     </div>
   )

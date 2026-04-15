@@ -105,19 +105,20 @@ export function Navbar({ offsetTop = 0, onLogin, onPricing }) {
             transition: `gap ${TRANSITION}`,
           }}>
             {/* Nav links — white text (over dark panel in default, over glass in scrolled) */}
-            <div style={{ display: 'flex', gap: scrolled ? '22px' : '28px', transition: `gap ${TRANSITION}` }}>
+            <div className="lp-nav-links" style={{ display: 'flex', gap: scrolled ? '22px' : '28px', transition: `gap ${TRANSITION}` }}>
               {NAV_ITEMS.map(item => (
                 <NavItem
                   key={item.label}
                   item={item}
                   textColor={scrolled ? 'rgba(255,255,255,0.85)' : '#374151'}
-                  onPricing={item.label === 'Pricing' ? onPricing : undefined}
+                 /* onPricing={item.label === 'Pricing' ? onPricing : undefined} */
                 />
               ))}
             </div>
 
             {/* CTA — orange, sharp radius */}
             <a
+              className="lp-nav-actions"
               href="#waitlist"
               style={{
                 display: 'inline-flex',
@@ -140,36 +141,33 @@ export function Navbar({ offsetTop = 0, onLogin, onPricing }) {
               Early Access
             </a>
           </div>
+
+          {/* ── Hamburger — inside pill, hidden on desktop ── */}
+          <button
+            className="mobile-menu-btn"
+            onClick={() => setMenuOpen(o => { if (o) setMobileSection(null); return !o })}
+            aria-label="Toggle menu"
+            style={{
+              display: 'none',
+              flexDirection: 'column',
+              gap: 5,
+              padding: 8,
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              flexShrink: 0,
+            }}
+          >
+            {[
+              { transform: menuOpen ? 'rotate(45deg) translateY(7px)' : 'none' },
+              { opacity: menuOpen ? 0 : 1 },
+              { transform: menuOpen ? 'rotate(-45deg) translateY(-7px)' : 'none' },
+            ].map((extra, i) => (
+              <span key={i} style={{ width: 22, height: 2, background: scrolled ? '#fff' : '#111111', display: 'block', transition: 'all 0.25s ease', ...extra }} />
+            ))}
+          </button>
         </div>
       </div>
-
-      {/* ── Mobile hamburger ── */}
-      <button
-        className="mobile-menu-btn"
-        onClick={() => setMenuOpen(o => { if (o) setMobileSection(null); return !o })}
-        aria-label="Toggle menu"
-        style={{
-          position: 'fixed',
-          top: offsetTop + 20,
-          right: 20,
-          zIndex: 61,
-          display: 'none',
-          flexDirection: 'column',
-          gap: 5,
-          padding: 8,
-          background: 'none',
-          border: 'none',
-          cursor: 'pointer',
-        }}
-      >
-        {[
-          { transform: menuOpen ? 'rotate(45deg) translateY(7px)' : 'none' },
-          { opacity: menuOpen ? 0 : 1 },
-          { transform: menuOpen ? 'rotate(-45deg) translateY(-7px)' : 'none' },
-        ].map((extra, i) => (
-          <span key={i} style={{ width: 22, height: 2, background: '#fff', display: 'block', ...extra }} />
-        ))}
-      </button>
 
       {/* ── Mobile menu ── */}
       <AnimatePresence>

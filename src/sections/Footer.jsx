@@ -15,7 +15,7 @@ export function Footer() {
                 alt="Advaita logo"
                 style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover', background: 'none' }}
               />
-              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.2rem', color: '#F0EBE0' }}>Advaita Intelligence</span>
+              <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 700, fontSize: '1.2rem', color: '#F0EBE0' }}>Advaita Intelligence</span>
             </div>
             <p style={{ fontSize: '0.875rem', color: 'rgba(240,235,224,0.45)', lineHeight: 1.65, maxWidth: 240 }}>
               AI-powered clickstream analytics. Open source, self-hosted, and built for engineering teams.
@@ -80,7 +80,7 @@ export function Footer() {
 
       {/* Giant brand wordmark at the bottom */}
       <div style={{ padding: '0 32px', overflow: 'hidden', lineHeight: 1, textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.03)', paddingTop: 32, paddingBottom: 0 }}>
-        <div className="footer-brand-text">ADVAITA</div>
+        <div className="footer-brand-text" style={{fontFamily:'Manrope'}}>ADVAITA</div>
       </div>
     </footer>
   )

@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+
 const F = "'Manrope', sans-serif"
 const B = '1px solid rgba(255,255,255,0.07)'
 
@@ -317,19 +319,19 @@ function AIInterface() {
 /* ══════════════════════════════════════════════════════════════
    CARD WRAPPER
 ══════════════════════════════════════════════════════════════ */
-function Card({ stepNum, title, desc, illustration, wide, isRight, isBottom, children }) {
+function Card({ stepNum, title, desc, illustration, wide, isRight, isBottom, children, isMobile }) {
   return (
     <div style={{
-      gridColumn: wide ? 'span 2' : undefined,
+      gridColumn: wide && !isMobile ? 'span 2' : undefined,
       padding: '22px 24px 20px',
-      borderRight: isRight || wide ? 'none' : B,
+      borderRight: isMobile || isRight || wide ? 'none' : B,
       borderBottom: isBottom ? 'none' : B,
-      display: wide ? 'flex' : 'block',
-      gap: wide ? 48 : 0,
-      alignItems: wide ? 'flex-start' : undefined,
+      display: wide && !isMobile ? 'flex' : 'block',
+      gap: wide && !isMobile ? 48 : 0,
+      alignItems: wide && !isMobile ? 'flex-start' : undefined,
     }}>
       {/* left content (always shown) */}
-      <div style={{ flex: wide ? '0 0 340px' : undefined }}>
+      <div style={{ flex: wide && !isMobile ? '0 0 340px' : undefined }}>
         <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#F47B20', letterSpacing: '0.06em', fontFamily: F, marginBottom: 6 }}>
           {stepNum}
         </div>
@@ -351,11 +353,18 @@ function Card({ stepNum, title, desc, illustration, wide, isRight, isBottom, chi
    MAIN EXPORT
 ══════════════════════════════════════════════════════════════ */
 export function HowItWorks() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
   return (
     <section style={{
       position: 'relative',
       background: '#0E0E0E',
-      padding: '80px 40px 96px',
+      padding: isMobile ? '60px 20px 80px' : '80px 40px 96px',
       overflow: 'hidden',
     }}>
       {/* notebook grid bg */}
@@ -402,7 +411,7 @@ export function HowItWorks() {
         {/* bento grid */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
+          gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
           border: B,
           borderRadius: 14,
           overflow: 'hidden',
@@ -413,33 +422,33 @@ export function HowItWorks() {
           <Card stepNum="01" title="Install the SDK"
             desc="One package, any platform. Works on Web, iOS, Android, Node, Go, Flutter, and more."
             illustration={<IllustrationSDK />}
-            isRight={false} isBottom={false}
+            isRight={false} isBottom={false} isMobile={isMobile}
           />
 
           {/* 02 */}
           <Card stepNum="02" title="Events Flow In"
             desc="Every user action is captured automatically and streamed to Advaita in real-time — with zero latency overhead."
             illustration={<IllustrationFlow />}
-            isRight={true} isBottom={false}
+            isRight={true} isBottom={false} isMobile={isMobile}
           />
 
           {/* 03 */}
           <Card stepNum="03" title="Processed & Stored"
             desc="Raw events are validated, geo-enriched, deduplicated and written to ClickHouse for sub-second analytics queries."
             illustration={<IllustrationProcess />}
-            isRight={false} isBottom={false}
+            isRight={false} isBottom={false} isMobile={isMobile}
           />
 
           {/* 04 */}
           <Card stepNum="04" title="Unlock Insights"
             desc="Retention curves, cohort heatmaps, conversion funnels — all visualised instantly across your entire user base."
             illustration={<IllustrationChart />}
-            isRight={true} isBottom={false}
+            isRight={true} isBottom={false} isMobile={isMobile}
           />
 
           {/* 05 — wide */}
           <Card
-            stepNum="05" title="Ask the AI" wide isRight isBottom
+            stepNum="05" title="Ask the AI" wide isRight isBottom isMobile={isMobile}
             desc="Your built-in data scientist. Ask any question about your users in plain English — get instant answers, charts, and recommendations. No SQL, no analyst needed."
             illustration={
               <div style={{ display: 'flex', gap: 8, marginTop: 18, flexWrap: 'wrap' }}>

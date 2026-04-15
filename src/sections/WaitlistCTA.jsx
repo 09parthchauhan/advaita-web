@@ -57,7 +57,7 @@ export function WaitlistCTA() {
         </motion.div>
 
         <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.08 }}
-          style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 900, fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', color: '#0F172A', lineHeight: 1.1, marginBottom: 20 }}
+          style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 900, fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', color: '#0F172A', lineHeight: 1.1, marginBottom: 20 }}
         >
           Know why users churn.<br />
           <em style={{ fontStyle: 'italic', color: '#F47B20' }}>Before they do.</em>
@@ -66,7 +66,7 @@ export function WaitlistCTA() {
         <motion.p initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.14 }}
           style={{ fontSize: '1.1rem', color: '#64748B', marginBottom: 40, fontWeight: 300, lineHeight: 1.7 }}
         >
-          Join engineers who switched from dashboards to answers. Free plan, no credit card.
+          Join engineers who switched from dashboards to answers. 
         </motion.p>
 
         <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>

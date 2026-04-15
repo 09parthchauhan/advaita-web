@@ -29,3 +29,4 @@ export const AnimatedCounter = memo(function AnimatedCounter({ value, prefix = '
     </div>
   )
 })
+
