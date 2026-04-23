@@ -7,21 +7,18 @@ const STEPS = [
     tag: 'Install',
     title: 'Drop in the SDK',
     desc: 'One line per platform. SDKs for every language your team ships — no infra changes required.',
-    icon: IconInstall,
     viz: VizInstall,
   },
   {
     tag: 'Track',
     title: 'Capture every event',
     desc: 'Events flow in real-time through your pipeline — validated, enriched, and stored automatically.',
-    icon: IconFlow,
     viz: VizFlow,
   },
   {
     tag: 'Ask',
     title: 'Query with AI',
     desc: 'Plain-English questions, SQL-free answers. Share any insight with your team in a single click.',
-    icon: IconAsk,
     viz: VizAsk,
   },
 ]
@@ -42,9 +39,9 @@ function useInView(threshold = 0.15) {
 }
 
 function FeatureCard({ step, index, inView }) {
-  const Icon = step.icon
   const Viz = step.viz
   const delay = 120 * index
+  const stepNumber = String(index + 1).padStart(2, '0')
 
   return (
     <div
@@ -62,18 +59,16 @@ function FeatureCard({ step, index, inView }) {
     >
       <div
         style={{
-          width: 44,
-          height: 44,
-          borderRadius: 10,
-          background: '#F47B20',
-          display: 'inline-flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          fontFamily: "'Space Grotesk', 'IBM Plex Sans', sans-serif",
+          fontWeight: 700,
+          fontSize: '2.4rem',
+          lineHeight: 1,
+          letterSpacing: '-0.03em',
+          color: 'rgba(17,17,17,0.18)',
           marginBottom: 22,
-          boxShadow: '0 4px 12px rgba(244,123,32,0.25)',
         }}
       >
-        <Icon />
+        {stepNumber}
       </div>
 
       <h3
@@ -210,35 +205,6 @@ export function HowItWorks() {
         }
       `}</style>
     </section>
-  )
-}
-
-/* ── Icons ─────────────────────────────────────────── */
-function IconInstall() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polyline points="16 18 22 12 16 6" />
-      <polyline points="8 6 2 12 8 18" />
-    </svg>
-  )
-}
-function IconFlow() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="5" cy="12" r="2" />
-      <circle cx="19" cy="5" r="2" />
-      <circle cx="19" cy="19" r="2" />
-      <line x1="6.8" y1="11" x2="17.2" y2="5.8" />
-      <line x1="6.8" y1="13" x2="17.2" y2="18.2" />
-    </svg>
-  )
-}
-function IconAsk() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polyline points="3 17 9 11 13 15 21 7" />
-      <polyline points="15 7 21 7 21 13" />
-    </svg>
   )
 }
 
