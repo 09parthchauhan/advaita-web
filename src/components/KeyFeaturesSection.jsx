@@ -30,7 +30,7 @@ function ChatPreview() {
     <div style={{ background: '#13131a', height: '100%', display: 'flex', flexDirection: 'column' }}>
       {/* Header */}
       <div style={{ background: '#1a1a2e', padding: '12px 16px', borderBottom: '0.5px solid rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', gap: '10px' }}>
-        <img src="/Logo.png" alt="" style={{ width: '32px', height: '32px', borderRadius: '50%' }} />
+        <img src="/logo.png" alt="" style={{ width: '32px', height: '32px', borderRadius: '50%' }} />
         <div>
           <div style={{ fontSize: '12px', fontWeight: '600', color: '#fff' }}>ACAI · Clickstream AI</div>
           <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.4)' }}>Test App - Android · acai-kotlin</div>
@@ -46,7 +46,7 @@ function ChatPreview() {
         {messages.slice(0, shown).map((m, i) => (
           <div key={i} style={{ display: 'flex', justifyContent: m.role === 'user' ? 'flex-end' : 'flex-start', animation: 'msgIn 0.3s ease' }}>
             {m.role === 'ai' && (
-              <img src="/Logo.png" alt="" style={{ width: '22px', height: '22px', borderRadius: '50%', marginRight: '8px', flexShrink: 0, marginTop: '2px' }} />
+              <img src="/logo.png" alt="" style={{ width: '22px', height: '22px', borderRadius: '50%', marginRight: '8px', flexShrink: 0, marginTop: '2px' }} />
             )}
             <div style={{
               maxWidth: '80%', padding: '9px 12px', borderRadius: m.role === 'user' ? '12px 12px 2px 12px' : '12px 12px 12px 2px',
