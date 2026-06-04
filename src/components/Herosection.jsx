@@ -240,7 +240,7 @@ function DashboardStack() {
 export default function HeroSection() {
   return (
     <section
-      className="pt-10 pb-0 relative overflow-hidden"
+      className="hero-section pt-10 pb-0 relative overflow-hidden"
       style={{ minHeight: '85vh', display: 'flex', flexDirection: 'column' }}
     >
       {/* Stacked dashboard background */}
@@ -260,7 +260,7 @@ export default function HeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-jet-black mb-6" style={{ fontSize: '64px', lineHeight: 1.1, letterSpacing: '-0.04em', fontWeight: '500', maxWidth: '900px', textAlign: 'left' }}>
+          <h1 className="text-jet-black mb-6" style={{ fontSize: 'clamp(34px, 7vw, 64px)', lineHeight: 1.1, letterSpacing: '-0.04em', fontWeight: '500', maxWidth: '900px', textAlign: 'left' }}>
             <span className="block overflow-hidden">
               <span className="anim-word-1 block">AI Analytics Platform</span>
             </span>
@@ -302,8 +302,8 @@ export default function HeroSection() {
         </div>
 
         {/* Bottom — CTA right */}
-        <div className="mt-auto flex justify-end">
-          <div className="grid grid-cols-2" style={{ width: '440px' }}>
+        <div className="hero-cta-wrap mt-auto flex justify-end">
+          <div className="grid grid-cols-2" style={{ width: 'min(440px, 100%)' }}>
             <a
               href="https://signup.acaiplatform.ai/"
               className="arrow-button anim-card-1"

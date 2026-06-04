@@ -270,7 +270,7 @@ export default function KeyFeaturesSection() {
           <div style={{ width: '10px', height: '10px', background: '#f5820a' }} />
           <span style={{ fontSize: '11px', fontWeight: '600', letterSpacing: '0.15em', color: '#666', textTransform: 'uppercase' }}>Driving Your Product</span>
         </div>
-        <h3 style={{ fontSize: '50px', fontWeight: '500', letterSpacing: '-0.04em', color: '#111', lineHeight: 1.1, marginBottom: '20px' }}>
+        <h3 style={{ fontSize: 'clamp(30px, 6vw, 50px)', fontWeight: '500', letterSpacing: '-0.04em', color: '#111', lineHeight: 1.1, marginBottom: '20px' }}>
           <span className="block overflow-hidden">
             <span className={`headline-reveal-line ${visible ? 'is-visible' : ''}`}>Product Intelligence That Drives Decisions</span>
           </span>
@@ -281,12 +281,12 @@ export default function KeyFeaturesSection() {
       </div>
 
       {/* Split layout */}
-      <div style={{ maxWidth: '1480px', margin: '0 auto', padding: '0 20px', display: 'grid', gridTemplateColumns: '440px 1fr', gap: '72px', alignItems: 'start' }}>
+      <div className="kf-split" style={{ maxWidth: '1480px', margin: '0 auto', padding: '0 20px', display: 'grid', gridTemplateColumns: '440px 1fr', gap: '72px', alignItems: 'start' }}>
 
         {/* LEFT */}
         <div className={`scroll-reveal-left ${visible ? 'is-visible' : ''}`} style={{ width:'100%', transitionDelay: '140ms' }}>
           <div style={{ marginBottom: '20px' }}>
-            <h3 style={{ fontFamily: "'Faculty Glyphic', 'Geist', sans-serif", fontSize: '32px', fontWeight: '520', letterSpacing: '-0.04em', color: '#111', lineHeight: 1.3}}>Grow Smarter, Not Harder</h3>
+            <h3 style={{ fontFamily: "'Faculty Glyphic', 'Geist', sans-serif", fontSize: 'clamp(26px, 5vw, 32px)', fontWeight: '520', letterSpacing: '-0.04em', color: '#111', lineHeight: 1.3}}>Grow Smarter, Not Harder</h3>
             <p style={{ fontSize: '18px', color: '#4d4d4d', lineHeight: 1.4, marginTop: '20px', fontWeight: '400', letterSpacing: '-0.02em' }}>Gain deep, AI-powered visibility into every user interaction and uncover insights you never knew you were missing.</p>
           </div>
 
@@ -299,7 +299,7 @@ export default function KeyFeaturesSection() {
                 <span style={{ fontFamily: 'Geist, sans-serif', fontSize: '20px', fontWeight: '700', color: active === i ? '#111' : '#bbb', minWidth: '20px', transition: 'color 0.25s', fontVariantNumeric: 'tabular-nums' }}>{f.num}.</span>
                 <span style={{ fontSize: '20px', fontWeight: active === i ? '700' : '500', color: active === i ? '#111' : '#777', transition: 'all 0.25s', lineHeight: 1.3 }}>{f.title}</span>
               </div>
-              <div style={{ overflow: 'hidden', maxHeight: active === i ? '80px' : '0', opacity: active === i ? 1 : 0, transition: 'max-height 0.35s ease, opacity 0.25s ease', paddingLeft: '32px' }}>
+              <div style={{ overflow: 'hidden', maxHeight: active === i ? '160px' : '0', opacity: active === i ? 1 : 0, transition: 'max-height 0.35s ease, opacity 0.25s ease', paddingLeft: '32px' }}>
                 <p style={{ fontSize: '16px', color: '#888', lineHeight: 1.65, fontWeight: '400' }}>{f.desc}</p>
               </div>
             </div>
@@ -307,7 +307,7 @@ export default function KeyFeaturesSection() {
         </div>
 
         {/* RIGHT — large rounded gradient bg, preview floats inside */}
-        <div className={`scroll-reveal-right ${visible ? 'is-visible' : ''}`} style={{ position: 'sticky', top: '80px', height: '750px', borderRadius: '0px', overflow: 'hidden', marginLeft: '40px', transitionDelay: '260ms' }}>
+        <div className={`kf-preview scroll-reveal-right ${visible ? 'is-visible' : ''}`} style={{ position: 'sticky', top: '80px', height: '750px', borderRadius: '0px', overflow: 'hidden', marginLeft: '40px', transitionDelay: '260ms' }}>
 
           {/* Gradient background */}
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, #f5c4a0 0%, #f5d890 30%, #c8f0c8 65%, #c4c8f5 100%)' }} />
@@ -319,7 +319,7 @@ export default function KeyFeaturesSection() {
           </svg>
 
           {/* Floating inner card — shifted right */}
-          <div key={active} style={{
+          <div key={active} className="kf-preview-card" style={{
             position: 'absolute',
             top: '36px', bottom: '0px', left: '40px', right: '0px',
             borderRadius: '0px', overflow: 'hidden',

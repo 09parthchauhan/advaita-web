@@ -103,8 +103,8 @@ export default function HowItWorksSection() {
 
   return (
     <section ref={sectionRef} style={{ background: '#F6F6F1', padding: '100px 0' }}>
-      <div style={{ maxWidth: '1480px', margin: '0 auto', padding: '0 40px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: '80px', alignItems: 'center' }}>
+      <div className="hiw-container" style={{ maxWidth: '1480px', margin: '0 auto', padding: '0 40px' }}>
+        <div className="hiw-grid" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: '80px', alignItems: 'center' }}>
 
           {/* LEFT — headline + fan */}
           <div>
@@ -114,7 +114,7 @@ export default function HowItWorksSection() {
             How It Works
           </span>
         </div>
-            <h3 style={{ fontSize: '54px', fontWeight: '500', letterSpacing: '-0.04em', color: '#111', lineHeight: 1.1, marginBottom: '48px' }}>
+            <h3 style={{ fontSize: 'clamp(32px, 6vw, 54px)', fontWeight: '500', letterSpacing: '-0.04em', color: '#111', lineHeight: 1.1, marginBottom: '48px' }}>
               <span className="block overflow-hidden">
                 <span className={`headline-reveal-line ${visible ? 'is-visible' : ''}`}>Designed to turn</span>
               </span>
@@ -134,8 +134,8 @@ export default function HowItWorksSection() {
                 style={{ padding: '18px 0', transitionDelay: `${0.18 + i * 0.12}s` }}
               >
                 <div style={{ fontFamily: 'Geist, sans-serif', fontSize: '36px', fontWeight: '800', letterSpacing: '-0.04em', color: '#f5820a', marginBottom: '4px' }}>{s.num}</div>
-                <div style={{ fontSize: '30px', fontWeight: '700', color: '#111', marginBottom: '6px' }}>{s.title}</div>
-                <div style={{ fontSize: '15px', color: '#828282', lineHeight: 1.7, width: '70%'}}>{s.desc}</div>
+                <div style={{ fontSize: 'clamp(22px, 5vw, 30px)', fontWeight: '700', color: '#111', marginBottom: '6px' }}>{s.title}</div>
+                <div className="hiw-step-desc" style={{ fontSize: '15px', color: '#828282', lineHeight: 1.7, width: '70%'}}>{s.desc}</div>
               </div>
             ))}
 

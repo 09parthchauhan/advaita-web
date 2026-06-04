@@ -257,7 +257,7 @@ export default function TeamsSection() {
               Everything You Need to Drive Results
             </span>
           </div>
-          <h3 style={{ fontSize: '54px', fontWeight: '500', letterSpacing: '-0.04em', color: 'white', lineHeight: 1.1, marginBottom: '18px' }}>
+          <h3 style={{ fontSize: 'clamp(30px, 6vw, 54px)', fontWeight: '500', letterSpacing: '-0.04em', color: 'white', lineHeight: 1.1, marginBottom: '18px' }}>
             <span className="block overflow-hidden">
               <span className={`headline-reveal-line ${visible ? 'is-visible' : ''}`}>Built for Every Team That Touches Product</span>
             </span>
@@ -269,11 +269,12 @@ export default function TeamsSection() {
 
         {/* Tab selector — no inner borders */}
         <div className={`team-inner-reveal ${visible ? 'is-visible' : ''}`} style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px', transitionDelay: '0.42s' }}>
-          <div style={{ display: 'inline-flex', border: '0.5px solid #fff3', borderRadius: '0px', overflow: 'hidden' }}>
+          <div className="teams-tabs" style={{ display: 'inline-flex', border: '0.5px solid #fff3', borderRadius: '0px', overflow: 'hidden' }}>
             {TEAMS.map((t, i) => (
               <button
                 key={t.id}
                 onClick={() => setActive(i)}
+                className="teams-tab-btn"
                 style={{
                   padding: '12px 36px', fontSize: '15px', fontWeight: '500',
                   border: 'none', cursor: 'pointer',
@@ -292,7 +293,7 @@ export default function TeamsSection() {
         {/* Content card — no vertical divider */}
         <div
           key={active}
-          className={`team-card-reveal ${visible ? 'is-visible' : ''}`}
+          className={`teams-card team-card-reveal ${visible ? 'is-visible' : ''}`}
           style={{
             border: '0.5px solid #fff3',
             borderRadius: '0px',
@@ -305,13 +306,13 @@ export default function TeamsSection() {
           }}
         >
           {/* Left — text */}
-          <div style={{ padding: '72px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div className="teams-card-left" style={{ padding: '72px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '28px', marginLeft: '3px'}}>
                 <div style={{ width: '8px', height: '8px', background: '#f5820a' }} />
                 <span style={{ fontSize: '10px', fontWeight: '700', letterSpacing: '0.14em', color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase'}}>{team.tag}</span>
               </div>
-              <h6 style={{ fontSize: '36px', fontWeight: '500', letterSpacing: '-0.04em', color: '#fff', lineHeight: 1.12, marginBottom: '24px', whiteSpace: 'pre-line' }}>
+              <h6 style={{ fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '500', letterSpacing: '-0.04em', color: '#fff', lineHeight: 1.12, marginBottom: '24px', whiteSpace: 'pre-line' }}>
                 {team.headline}
               </h6>
               <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.45)', lineHeight: 1.5, maxWidth: '400px' }}>
@@ -335,7 +336,7 @@ export default function TeamsSection() {
           </div>
 
           {/* Right — illustration, no border-left */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px 32px', position: 'relative', overflow: 'hidden' }}>
+          <div className="teams-card-right" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px 32px', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 40%, rgba(255,255,255,0.03) 0%, transparent 70%)' }} />
             <div style={{ position: 'relative', zIndex: 1, width: '100%', height: '100%' }}>
               <Illustration />

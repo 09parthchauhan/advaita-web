@@ -50,14 +50,14 @@ export default function FaqSection() {
   return (
     <section ref={sectionRef} style={{ background: '#F6F6F1', padding: '110px 0' }}>
       <div style={{ maxWidth: '1480px', margin: '0 auto', padding: '0 20px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.25fr', gap: '96px', alignItems: 'start' }}>
-          <div style={{ position: 'sticky', top: '120px' }}>
+        <div className="faq-grid" style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.25fr', gap: '96px', alignItems: 'start' }}>
+          <div className="faq-left" style={{ position: 'sticky', top: '120px' }}>
             <div className={`scroll-reveal ${visible ? 'is-visible' : ''}`} style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '34px' }}>
               <div style={{ width: '10px', height: '10px', background: '#f5820a' }} />
               <span style={{ fontSize: '11px', fontWeight: '700', letterSpacing: '0.16em', color: '#111', textTransform: 'uppercase' }}>Questions</span>
             </div>
 
-            <h3 style={{ fontSize: '54px', fontWeight: '550', letterSpacing: '-0.04em', color: '#111', lineHeight: 1.1, margin: 0 }}>
+            <h3 style={{ fontSize: 'clamp(32px, 6vw, 54px)', fontWeight: '550', letterSpacing: '-0.04em', color: '#111', lineHeight: 1.1, margin: 0 }}>
               <span className="block overflow-hidden">
                 <span className={`headline-reveal-line ${visible ? 'is-visible' : ''}`}>Questions Are To</span>
               </span>
@@ -75,7 +75,7 @@ export default function FaqSection() {
                 <button
                   key={item.question}
                   type="button"
-                  className={`scroll-reveal ${visible ? 'is-visible' : ''}`}
+                  className={`faq-item scroll-reveal ${visible ? 'is-visible' : ''}`}
                   onClick={() => setOpen(isOpen ? null : index)}
                   style={{
                     width: '100%',
@@ -90,7 +90,7 @@ export default function FaqSection() {
                   }}
                 >
                   <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px' }}>
-                    <span style={{ fontSize: '23px', fontWeight: '500', color: '#111', lineHeight: 1.25 }}>{item.question}</span>
+                    <span style={{ fontSize: 'clamp(18px, 4.5vw, 23px)', fontWeight: '500', color: '#111', lineHeight: 1.25 }}>{item.question}</span>
                     <svg
                       width="18"
                       height="18"
@@ -103,9 +103,10 @@ export default function FaqSection() {
                   </span>
 
                   <span
+                    className="faq-answer"
                     style={{
                       display: 'block',
-                      maxHeight: isOpen ? '160px' : '0px',
+                      maxHeight: isOpen ? '320px' : '0px',
                       opacity: isOpen ? 1 : 0,
                       overflow: 'hidden',
                       transition: 'max-height 0.32s ease, opacity 0.24s ease, margin-top 0.24s ease',

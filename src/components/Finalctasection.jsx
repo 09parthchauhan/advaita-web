@@ -120,7 +120,7 @@ export default function FinalCtaSection() {
               </span>
             </div>
 
-            <h3 style={{ fontSize: '64px', fontWeight: '500', letterSpacing: '-0.04em', color: '#fff', lineHeight: 1.05, marginBottom: '22px' }}>
+            <h3 style={{ fontSize: 'clamp(34px, 7vw, 64px)', fontWeight: '500', letterSpacing: '-0.04em', color: '#fff', lineHeight: 1.05, marginBottom: '22px' }}>
               <span className="block overflow-hidden">
                 <span className={`headline-reveal-line ${visible ? 'is-visible' : ''}`}>Start Understanding</span>
               </span>
@@ -129,7 +129,7 @@ export default function FinalCtaSection() {
               </span>
             </h3>
 
-            <p className={`scroll-reveal ${visible ? 'is-visible' : ''}`} style={{ fontSize: '20px', color: 'rgba(255,255,255,0.48)', lineHeight: 1.45, margin: '0 auto 36px', maxWidth: '560px', transitionDelay: '0.3s' }}>
+            <p className={`scroll-reveal ${visible ? 'is-visible' : ''}`} style={{ fontSize: 'clamp(16px, 4vw, 20px)', color: 'rgba(255,255,255,0.48)', lineHeight: 1.45, margin: '0 auto 36px', maxWidth: '560px', transitionDelay: '0.3s' }}>
               Turn product behaviour into decisions your whole team can trust.
             </p>
 

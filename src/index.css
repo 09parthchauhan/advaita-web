@@ -3435,6 +3435,94 @@ p, span, button, a, li {
   filter: blur(0);
 }
 
+/* ───────── Landing page mobile responsiveness ───────── */
+@media (max-width: 1024px) {
+  .kf-split {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+  }
+
+  .kf-preview {
+    position: static !important;
+    height: clamp(420px, 72vw, 640px) !important;
+    margin-left: 0 !important;
+  }
+
+  .kf-preview-card {
+    left: 16px !important;
+    top: 24px !important;
+  }
+
+  .teams-card {
+    grid-template-columns: 1fr !important;
+  }
+
+  .teams-card-left {
+    padding: 48px 36px !important;
+  }
+
+  .hiw-grid {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .faq-left {
+    position: static !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .analysis-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .teams-tabs {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+  }
+
+  .teams-tab-btn {
+    flex: 1 1 40% !important;
+    padding: 12px 10px !important;
+    font-size: 13px !important;
+  }
+
+  .teams-card-left {
+    padding: 40px 24px !important;
+  }
+
+  .teams-card-right {
+    padding: 28px 20px !important;
+    min-height: 320px !important;
+  }
+
+  .hiw-container {
+    padding: 0 20px !important;
+  }
+
+  .hiw-step-desc {
+    width: 100% !important;
+  }
+
+  .faq-item {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: auto !important;
+    padding-bottom: 40px !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .scroll-reveal,
   .scroll-reveal-left,

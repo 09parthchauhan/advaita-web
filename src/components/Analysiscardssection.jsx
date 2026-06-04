@@ -29,7 +29,7 @@ export default function AnalysisCardsSection() {
               <div style={{ width: '10px', height: '10px', background: '#f5820a' }} />
               <span style={{ fontSize: '11px', fontWeight: '600', letterSpacing: '0.15em', color: '#666', textTransform: 'uppercase' }}>Analysis Platform</span>
             </div>
-            <h3 style={{ fontSize: '54px', fontWeight: '500', letterSpacing: '-0.04em', color: '#111', lineHeight: 1.1, marginBottom: '18px' }}>
+            <h3 style={{ fontSize: 'clamp(30px, 6vw, 54px)', fontWeight: '500', letterSpacing: '-0.04em', color: '#111', lineHeight: 1.1, marginBottom: '18px' }}>
               <span className="block overflow-hidden">
                 <span className={`headline-reveal-line ${visible ? 'is-visible' : ''}`}>Analyse Everywhere Your Users Are</span>
               </span>
@@ -40,7 +40,7 @@ export default function AnalysisCardsSection() {
           </div>
   
           {/* 3 Cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+          <div className="analysis-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
   
             {/* Card 1 — Product Analysis */}
             <div className={`scroll-reveal ${visible ? 'is-visible' : ''}`} style={{ background: '#111111', borderRadius: '0px', overflow: 'hidden', minHeight: '440px', padding: '32px', position: 'relative', display: 'flex', flexDirection: 'column', transitionDelay: '0.42s' }}>

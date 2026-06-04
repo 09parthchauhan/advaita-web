@@ -238,8 +238,8 @@ export default function Navbar() {
         {/* Left: Logo */}
         <div className="flex items-center">
           <a href="/" className="brand-home-link flex items-center gap-2" aria-label="Go to Advaita Intelligence home" style={{ marginLeft: '3px' }}>
-            <img src="/logo.png" alt="Advaita Intelligence" className="w-11 h-11 rounded-full" style={{ alignSelf: 'center' }} />
-            <span className="text-jet-black font-semibold text-[20px] whitespace-nowrap" style={{ alignSelf: 'center' }}>ADVAITA INTELLIGENCE</span>
+            <img src="/logo.png" alt="Advaita Intelligence" className="w-9 h-9 sm:w-11 sm:h-11 rounded-full" style={{ alignSelf: 'center' }} />
+            <span className="text-jet-black font-semibold text-[15px] sm:text-[20px] whitespace-nowrap" style={{ alignSelf: 'center' }}>ADVAITA INTELLIGENCE</span>
           </a>
         </div>
 
