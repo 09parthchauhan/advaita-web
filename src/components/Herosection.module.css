@@ -1,0 +1,306 @@
+.heroSection {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.stack {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.stackScene {
+  position: absolute;
+  top: 16%;
+  right: 3%;
+  width: 46%;
+  height: 74%;
+  animation: heroStackIn 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.stackCard {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.stackCard img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  background: #fff;
+  user-select: none;
+  box-shadow:
+    0 60px 120px -30px rgba(17, 17, 17, 0.38),
+    0 30px 60px -20px rgba(17, 17, 17, 0.22),
+    0 8px 16px rgba(17, 17, 17, 0.08);
+}
+
+.stackCardFront {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+  animation: heroFloatFront 8s ease-in-out infinite;
+}
+
+.float {
+  position: absolute;
+  will-change: transform;
+}
+
+.floatOne {
+  top: 4%;
+  left: -14%;
+  width: 200px;
+  animation: heroBob1 7s ease-in-out infinite;
+  z-index: 4;
+}
+
+.floatTwo {
+  bottom: 6%;
+  left: -10%;
+  width: 210px;
+  animation: heroBob2 8.5s ease-in-out infinite;
+  z-index: 4;
+}
+
+.floatThree {
+  top: -6%;
+  right: -6%;
+  width: 200px;
+  animation: heroBob3 9.5s ease-in-out infinite;
+  z-index: 4;
+}
+
+.floatCard {
+  background: #ffffff;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  padding: 12px 14px;
+  font-family: 'Geist', sans-serif;
+  color: #111;
+  box-shadow:
+    0 30px 60px -20px rgba(17, 17, 17, 0.28),
+    0 10px 22px -10px rgba(17, 17, 17, 0.18),
+    0 2px 6px rgba(17, 17, 17, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.floatCardHead {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.floatCardDot {
+  width: 8px;
+  height: 8px;
+}
+
+.floatCardFoot {
+  font-size: 10px;
+  color: #888;
+  letter-spacing: 0.02em;
+}
+
+.floatCardBars {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.floatCardBar {
+  height: 6px;
+  background: rgba(17, 17, 17, 0.06);
+  position: relative;
+}
+
+.floatCardBar > div {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #f5820a, #f5d000);
+}
+
+.floatCardSpark {
+  width: 100%;
+  height: 44px;
+  display: block;
+}
+
+.floatCardGrid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 2px;
+}
+
+.floatCardGrid span {
+  aspect-ratio: 1;
+  background: rgba(17, 17, 17, 0.08);
+}
+
+.featurePill {
+  border: 1px solid #111111;
+  background: transparent;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
+}
+
+.featurePill:hover {
+  background: rgba(255, 255, 255, 0.75);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.animPillOne {
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+}
+
+.animPillTwo {
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.85s both;
+}
+
+.ctaWrap {
+  margin-top: auto;
+}
+
+.ctaGrid {
+  width: min(440px, 100%);
+}
+
+.ctaButton {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 22px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  min-height: 110px;
+  transition: opacity 0.2s;
+}
+
+.ctaButton:hover {
+  opacity: 0.85;
+}
+
+.ctaPrimary {
+  background: #111;
+}
+
+.ctaSecondary {
+  background: #252525;
+}
+
+@keyframes heroStackIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFloatFront {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes heroBob1 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes heroBob2 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes heroBob3 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stackScene,
+  .stackCardFront,
+  .floatOne,
+  .floatTwo,
+  .floatThree {
+    animation: none;
+  }
+}
+
+@media (max-width: 1280px) {
+  .floatOne {
+    left: -4%;
+    width: 180px;
+  }
+
+  .floatTwo {
+    left: -2%;
+    width: 190px;
+  }
+
+  .floatThree {
+    right: -2%;
+    width: 180px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .stackScene {
+    right: 2%;
+    width: 60%;
+  }
+
+  .floatOne,
+  .floatTwo {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .stack {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    min-height: auto !important;
+    padding-bottom: 40px !important;
+  }
+}

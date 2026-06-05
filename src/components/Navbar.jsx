@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import styles from './Navbar.module.css'
 
 const navLinks = [
   {
@@ -223,7 +224,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="anim-navbar w-full z-50"
+      className={`${styles.navbar} anim-navbar w-full z-50`}
       style={{
         position: 'sticky',
         top: visible ? 0 : '-96px',
@@ -237,7 +238,7 @@ export default function Navbar() {
 
         {/* Left: Logo */}
         <div className="flex items-center">
-          <a href="/" className="brand-home-link flex items-center gap-2" aria-label="Go to Advaita Intelligence home" style={{ marginLeft: '3px' }}>
+          <a href="/" className={`${styles.brandHomeLink} brand-home-link flex items-center gap-2`} aria-label="Go to Advaita Intelligence home" style={{ marginLeft: '3px' }}>
             <img src="/logo.png" alt="Advaita Intelligence" className="w-9 h-9 sm:w-11 sm:h-11 rounded-full" style={{ alignSelf: 'center' }} />
             <span className="text-jet-black font-semibold text-[15px] sm:text-[20px] whitespace-nowrap" style={{ alignSelf: 'center' }}>ADVAITA INTELLIGENCE</span>
           </a>
@@ -245,20 +246,20 @@ export default function Navbar() {
 
         {/* Right: Nav Links + CTA */}
         <div
-          className={`nav-desktop-shell hidden md:flex items-center gap-10 relative ${activeDesktopLink ? 'is-dropdown-open' : ''}`}
+          className={`${styles.desktopShell} nav-desktop-shell hidden md:flex items-center gap-10 relative ${activeDesktopLink ? `${styles.isDropdownOpen} is-dropdown-open` : ''}`}
           onMouseLeave={() => setActiveDesktopIndex(null)}
         >
           <div className="flex items-center gap-10">
             {navLinks.map((link, index) => (
               <div
                 key={link.label}
-                className="nav-menu-item"
+                className={`${styles.menuItem} nav-menu-item`}
                 onMouseEnter={() => handleDesktopMenuEnter(index)}
                 onFocus={() => handleDesktopMenuEnter(index)}
               >
                 {link.groups ? (
                   <button
-                    className="nav-link-item text-[14px] font-medium flex items-center bg-transparent border-none cursor-pointer"
+                    className={`${styles.navLinkItem} nav-link-item text-[14px] font-medium flex items-center bg-transparent border-none cursor-pointer`}
                     aria-haspopup="true"
                   >
                     {link.label}
@@ -266,7 +267,7 @@ export default function Navbar() {
                 ) : (
                   <a
                     href={link.href}
-                    className="nav-link-item text-[14px] font-medium flex items-center gap-1 bg-transparent border-none cursor-pointer"
+                    className={`${styles.navLinkItem} nav-link-item text-[14px] font-medium flex items-center gap-1 bg-transparent border-none cursor-pointer`}
                     style={{ textDecoration: 'none' }}
                   >
                     {link.label}
@@ -286,22 +287,22 @@ export default function Navbar() {
             </svg>
           </a>
           {activeDesktopLink && (
-            <div className={`nav-dropdown ${activeDesktopLink.label === 'PRODUCT' ? 'nav-dropdown-wide' : 'nav-dropdown-featured-layout'} nav-dropdown-from-${dropdownDirection}`}>
-              <div className="nav-dropdown-motion" key={activeDesktopLink.label}>
-                <div className="nav-dropdown-content">
+            <div className={`${styles.dropdown} nav-dropdown ${activeDesktopLink.label === 'PRODUCT' ? `${styles.dropdownWide} nav-dropdown-wide` : `${styles.dropdownFeaturedLayout} nav-dropdown-featured-layout`} ${dropdownDirection === 'right' ? styles.dropdownFromRight : styles.dropdownFromLeft}`}>
+              <div className={`${styles.dropdownMotion} nav-dropdown-motion`} key={activeDesktopLink.label}>
+                <div className={`${styles.dropdownContent} nav-dropdown-content`}>
                   {activeDesktopLink.groups.map((group) => (
-                    <div key={group.title} className="nav-dropdown-group">
-                      <p className="nav-dropdown-title">{group.title}</p>
-                      <div className="nav-dropdown-links">
+                    <div key={group.title} className={`${styles.dropdownGroup} nav-dropdown-group`}>
+                      <p className={`${styles.dropdownTitle} nav-dropdown-title`}>{group.title}</p>
+                      <div className={`${styles.dropdownLinks} nav-dropdown-links`}>
                         {group.items.map((item) => (
-                          <a key={item.label} href={item.href} className="nav-dropdown-link">
+                          <a key={item.label} href={item.href} className={`${styles.dropdownLink} nav-dropdown-link`}>
                             {item.icon && (
-                              <span className="nav-dropdown-icon" style={{ color: item.accent }}>
+                              <span className={`${styles.dropdownIcon} nav-dropdown-icon`} style={{ color: item.accent }}>
                                 <NavIcon type={item.icon} />
                               </span>
                             )}
                             <span>{item.label}</span>
-                            <svg className="arrow-icon" width="11" height="11" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                            <svg className={`${styles.arrowIcon} arrow-icon`} width="11" height="11" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                               <path d="M2 2h10v10M2 12L12 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
                             </svg>
                           </a>
@@ -311,16 +312,16 @@ export default function Navbar() {
                   ))}
                 </div>
                 {activeDesktopLink.featured && (
-                  <a href={activeDesktopLink.featured.href} className={`nav-feature-card nav-feature-card-${activeDesktopLink.featured.tone}`}>
-                    <div className="nav-feature-art">
+                  <a href={activeDesktopLink.featured.href} className={`${styles.featureCard} nav-feature-card ${activeDesktopLink.featured.tone === 'platform' ? `${styles.featureCardPlatform} nav-feature-card-platform` : ''} ${activeDesktopLink.featured.tone === 'company' ? `${styles.featureCardCompany} nav-feature-card-company` : ''} ${activeDesktopLink.featured.tone === 'docs' ? `${styles.featureCardDocs} nav-feature-card-docs` : ''}`}>
+                    <div className={`${styles.featureArt} nav-feature-art`}>
                       <span>{activeDesktopLink.featured.eyebrow}</span>
                     </div>
-                    <div className="nav-feature-copy">
+                    <div className={`${styles.featureCopy} nav-feature-copy`}>
                       <div>
                         <p>{activeDesktopLink.featured.title}</p>
                         <span>{activeDesktopLink.featured.description}</span>
                       </div>
-                      <svg className="arrow-icon" width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                      <svg className={`${styles.arrowIcon} arrow-icon`} width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                         <path d="M2 2h10v10M2 12L12 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
                       </svg>
                     </div>
@@ -345,25 +346,25 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="border-t border-black/10 px-8 py-4 flex flex-col gap-3 md:hidden" style={{ background: 'rgba(246,246,241,0.98)' }}>
           {navLinks.map((link) => (
-            <div key={link.label} className="mobile-nav-group">
+            <div key={link.label}>
               {link.groups ? (
                 <>
                   <button
-                    className="mobile-nav-trigger text-body-sm text-charcoal text-left bg-transparent border-none cursor-pointer"
+                    className={`${styles.mobileTrigger} mobile-nav-trigger text-body-sm text-charcoal text-left bg-transparent border-none cursor-pointer`}
                     onClick={() => setMobileExpanded(mobileExpanded === link.label ? '' : link.label)}
                   >
                     <span>{link.label}</span>
-                    <svg className={`mobile-nav-chevron ${mobileExpanded === link.label ? 'is-open' : ''}`} width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                    <svg className={`${styles.mobileChevron} mobile-nav-chevron ${mobileExpanded === link.label ? `${styles.mobileChevronOpen} is-open` : ''}`} width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                       <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </button>
                   {mobileExpanded === link.label && (
-                    <div className="mobile-nav-panel">
+                    <div className={`${styles.mobilePanel} mobile-nav-panel`}>
                       {link.groups.map((group) => (
-                        <div key={group.title} className="mobile-nav-column">
-                          <p className="mobile-nav-title">{group.title}</p>
+                        <div key={group.title} className={`${styles.mobileColumn} mobile-nav-column`}>
+                          <p className={`${styles.mobileTitle} mobile-nav-title`}>{group.title}</p>
                           {group.items.map((item) => (
-                            <a key={item.label} href={item.href} className="mobile-nav-link">
+                            <a key={item.label} href={item.href} className={`${styles.mobileLink} mobile-nav-link`}>
                               {item.label}
                             </a>
                           ))}
@@ -373,7 +374,7 @@ export default function Navbar() {
                   )}
                 </>
               ) : (
-                <a href={link.href} className="mobile-nav-trigger text-body-sm text-charcoal text-left" style={{ textDecoration: 'none' }}>
+                <a href={link.href} className={`${styles.mobileTrigger} mobile-nav-trigger text-body-sm text-charcoal text-left`} style={{ textDecoration: 'none' }}>
                   <span>{link.label}</span>
                 </a>
               )}
@@ -386,7 +387,7 @@ export default function Navbar() {
                 <path d="M2 2h10v10M2 12L12 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
               </svg>
             </a>
-            <a href="https://signup.acaiplatform.ai/" className="arrow-button btn-get-started text-[13px] font-semibold px-4 py-2.5 w-full justify-center" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
+            <a href="https://signup.acaiplatform.ai/" className={`arrow-button ${styles.getStartedButton} text-[13px] font-semibold px-4 py-2.5 w-full justify-center`} style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
               GET STARTED
               <svg className="arrow-icon" width="12" height="12" viewBox="0 0 14 14" fill="none">
                 <path d="M2 2h10v10M2 12L12 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>

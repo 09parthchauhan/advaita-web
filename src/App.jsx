@@ -6,6 +6,9 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Careers from './pages/Careers'
 import Docs from './pages/Docs'
+import PlatformDashboard from './pages/PlatformDashboard'
+import PlatformAIAgents from './pages/PlatformAIAgents'
+import PlatformDataInterface from './pages/PlatformDataInterface'
 
 export default function App() {
   return (
@@ -17,6 +20,9 @@ export default function App() {
         <Route path="/company/about" element={<About />} />
         <Route path="/company/careers" element={<Careers />} />
         <Route path="/company/contact" element={<Contact />} />
+        <Route path="/platforms/dashboard" element={<PlatformDashboard />} />
+        <Route path="/platforms/ai-analysis-agents" element={<PlatformAIAgents />} />
+        <Route path="/platforms/data-intelligence" element={<PlatformDataInterface />} />
       </Routes>
     </BrowserRouter>
   )

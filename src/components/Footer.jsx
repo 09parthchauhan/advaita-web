@@ -73,7 +73,7 @@ export default function Footer() {
       <div className="site-footer-inner">
         <div className="site-footer-brand">
           <a href="/" className="site-footer-logo-row brand-home-link" aria-label="Go to Advaita Intelligence home">
-            <img src="/Logo.png" alt="Advaita Intelligence" className="site-footer-logo" />
+            <img src="/logo.png" alt="Advaita Intelligence" className="site-footer-logo" />
             <span>ADVAITA INTELLIGENCE</span>
           </a>
           <p>Product intelligence starts here</p>
