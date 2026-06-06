@@ -178,7 +178,10 @@ function Card({ card }) {
 
 // ─── Category block ───────────────────────────────────────────────────────────
 function CategoryBlock({ label, cards, cols = 3, visible, baseDelay = 0 }) {
-  const colClass = { 2: 'grid-cols-2', 3: 'grid-cols-3' }[cols] ?? 'grid-cols-3'
+  const colClass = {
+    2: 'grid-cols-1 sm:grid-cols-2',
+    3: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
+  }[cols] ?? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
   return (
     <div>
       <div className={`scroll-reveal ${visible ? 'is-visible' : ''} flex items-center gap-4 mb-5`}>

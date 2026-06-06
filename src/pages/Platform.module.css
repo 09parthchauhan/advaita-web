@@ -1207,28 +1207,133 @@
 }
 
 /* ─── Responsive ────────────────────────────────────────────────────── */
+
+/* ── Tablet landscape (≤1100px) ── */
 @media (max-width: 1100px) {
   .ovGrid, .featGrid, .relGrid { grid-template-columns: 1fr; }
-  .capGrid, .wfCards { grid-template-columns: 1fr; }
+  .capGrid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .wfCards { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
   .wfCardFloat { transform: none; box-shadow: 0 14px 40px rgba(17,17,17,0.1); }
   .wfCardFloat:hover { transform: translateY(-4px); }
   .ovVisualWrap { min-height: 380px; }
   .relVisualWrap { min-height: 340px; }
+  .ovContent h2, .capSection h2, .wfSection h2, .darkH2 { font-size: clamp(36px, 5vw, 56px); }
 }
 
-@media (max-width: 720px) {
-  .shell { width: calc(100% - 32px); }
-  .heroCopy h1 { font-size: clamp(34px,10vw,50px); }
-  .heroActions { flex-direction: column; }
-  .btnPrimary, .btnGhost { justify-content: center; }
-  .heroDash { min-width: 680px; margin: 20px 20px 0; }
-  .heroPreviewWrap { overflow-x: auto; }
-  .hdCharts { grid-template-columns: 1fr; }
-  .hdStats { grid-template-columns: repeat(3,1fr); }
+/* ── Tablet portrait (≤820px) ── */
+@media (max-width: 820px) {
   .capGrid { grid-template-columns: 1fr; }
   .wfCards { grid-template-columns: 1fr; }
+  .hdStats { grid-template-columns: repeat(2, 1fr); }
+  .hdCharts { grid-template-columns: 1fr; }
+  .ovGrid { gap: 36px; }
+  .featGrid { gap: 36px; }
+  .relGrid { gap: 36px; }
+  .heroCopy { margin-bottom: 36px; }
+}
+
+/* ── Mobile (≤720px) ── */
+@media (max-width: 720px) {
+  .shell { width: calc(100% - 32px); }
+
+  /* Hero text + actions */
+  .heroCopy h1 { font-size: clamp(32px, 9vw, 48px); }
+  .heroCopy > p { font-size: 15px; }
+  .heroActions { flex-direction: column; align-items: stretch; }
+  .btnPrimary, .btnGhost { justify-content: center; width: 100%; }
+
+  /* Hero dashboard — scale to fit, no scroll */
+  .heroPreviewWrap {
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+    /* height = top margin + scaled dashboard height: 12 + (vw-32) * (480/900) */
+    height: calc(12px + (100vw - 32px) * 0.55);
+  }
+  .heroDash {
+    min-width: 900px;
+    min-height: 480px;
+    margin: 12px 0 0 12px;
+    transform-origin: top left;
+    transform: scale(calc((100vw - 32px) / 900px));
+  }
+
+  /* Dashboard internals */
+  .hdStats { grid-template-columns: repeat(2, 1fr); }
+  .hdCharts { grid-template-columns: 1fr; }
+  .hdChartMini:last-child { display: none; }
+
+  /* Section headings */
+  .ovContent h2, .capSection h2, .wfSection h2, .darkH2 { font-size: clamp(28px, 8vw, 42px); }
+  .ovContent > p, .relDesc { font-size: 15px; max-width: 100%; }
+
+  /* Grids */
+  .capGrid { grid-template-columns: 1fr; }
+  .wfCards { grid-template-columns: 1fr; gap: 12px; }
   .featGrid { grid-template-columns: 1fr; }
   .relGrid { grid-template-columns: 1fr; }
+
+  /* Workflow cards */
+  .wfCard, .wfCardFloat { min-height: auto; padding: 24px 20px 28px; }
+  .wfCard h3, .wfCardFloat h3 { font-size: 22px; }
+  .wfCta { margin-top: 40px; }
+
+  /* Visuals */
+  .ovVisualWrap { min-height: 260px; }
+  .relVisualWrap { min-height: 280px; }
+  .capVisualWrap { height: 220px; }
+
+  /* Feature preview sidebar */
   .fpBody { grid-template-columns: 1fr; }
   .fpSide { display: none; }
+
+  /* Kicker + feature rows */
+  .featRowTitle { font-size: 18px; }
+  .featRowBody { font-size: 15px; max-width: 100%; }
+
+  /* Overview card */
+  .ovCard { padding: 20px; }
+  .ovValue { font-size: 48px; }
+  .ovChart { height: 140px; }
+
+  /* Reliability card */
+  .relCard { padding: 24px 20px; max-width: 100%; }
+  .relGauge { width: 180px; }
+  .relScore strong { font-size: 42px; }
+
+  /* Centering helpers */
+  .centerHead { margin-bottom: 40px; }
+}
+
+/* ── Small phones (≤480px) ── */
+@media (max-width: 480px) {
+  .shell { width: calc(100% - 24px); }
+
+  .heroCopy h1 { font-size: clamp(28px, 9vw, 40px); }
+  .heroPreviewWrap { height: calc(12px + (100vw - 24px) * 0.55); }
+  .heroDash {
+    margin: 8px 0 0 8px;
+    transform: scale(calc((100vw - 24px) / 900px));
+  }
+
+  .hdStats { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  .hdStats article strong { font-size: 16px; }
+
+  .ovContent h2, .capSection h2, .wfSection h2, .darkH2 { font-size: clamp(26px, 8vw, 36px); }
+
+  .capCard .capVisualWrap { height: 180px; }
+  .capContent h3 { font-size: 18px; }
+
+  .wfCard h3, .wfCardFloat h3 { font-size: 20px; }
+  .wfNum { font-size: 12px; }
+
+  .ovValue { font-size: 40px; }
+  .ovChart { height: 110px; }
+  .ovTooltip { padding: 7px 10px; }
+
+  .relGauge { width: 150px; }
+  .relScore strong { font-size: 34px; }
+  .relCardTitle { font-size: 14px; }
+
+  .featRowTitle { font-size: 17px; }
+  .featRowBody { font-size: 14px; }
 }
