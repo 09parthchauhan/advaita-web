@@ -24,26 +24,7 @@ const navLinks = [
       tone: 'company',
     },
   },
-  {
-    label: 'Docs',
-    groups: [
-      {
-        title: 'Documentation',
-        items: [
-          { label: 'SDK', href: '/docs#sdks', icon: 'sdk', accent: '#f5820a' },
-          { label: 'Get Started', href: '/docs#getting-started', icon: 'start', accent: '#4a9e1a' },
-          { label: 'Video Tutorials', href: '/docs#video-tutorials', icon: 'video', accent: '#f5d000' },
-        ],
-      },
-    ],
-    featured: {
-      title: 'Get Started',
-      eyebrow: 'Docs',
-      description: 'Install the SDK and send your first product event.',
-      href: '/docs#getting-started',
-      tone: 'docs',
-    },
-  },
+  { label: 'Docs', href: '/docs' },
   { label: 'Pricing', href: '/pricing' },
 ]
 

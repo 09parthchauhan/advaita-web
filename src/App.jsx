@@ -5,7 +5,7 @@ import Pricing from './pages/Pricing'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Careers from './pages/Careers'
-import Docs from './pages/Docs'
+import DocsPage from './pages/DocsPage'
 import Platform from './pages/Platform'
 import ProductPage from './pages/ProductPage'
 import ProductTeamPage from './pages/ProductTeamPage'
@@ -18,7 +18,9 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pricing" element={<Pricing />} />
-        <Route path="/docs" element={<Docs />} />
+        <Route path="/docs" element={<DocsPage />} />
+        <Route path="/docs/:section" element={<DocsPage />} />
+        <Route path="/docs/:section/:page" element={<DocsPage />} />
         <Route path="/company/about" element={<About />} />
         <Route path="/company/careers" element={<Careers />} />
         <Route path="/company/contact" element={<Contact />} />
