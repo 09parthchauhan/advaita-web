@@ -48,7 +48,7 @@ export default function FaqSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} style={{ background: '#F6F6F1', padding: '110px 0' }}>
+    <section ref={sectionRef} style={{ background: '#f5f5f3', padding: '110px 0' }}>
       <div style={{ maxWidth: '1480px', margin: '0 auto', padding: '0 20px' }}>
         <div className="faq-grid" style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.25fr', gap: '96px', alignItems: 'start' }}>
           <div className="faq-left" style={{ position: 'sticky', top: '120px' }}>
@@ -80,9 +80,9 @@ export default function FaqSection() {
                   style={{
                     width: '100%',
                     textAlign: 'left',
-                    background: isOpen ? '#ededeb' : '#fbfbf8',
+                    background: isOpen ? '#eaeaea' : '#ffffff',
                     border: '1px solid rgba(17,17,17,0.12)',
-                    borderRadius: '0px',
+                    borderRadius: '12px',
                     padding: isOpen ? '30px 34px 34px' : '26px 34px',
                     cursor: 'pointer',
                     transition: 'background 0.24s ease, border-color 0.24s ease, transform 1.15s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.15s cubic-bezier(0.16, 1, 0.3, 1)',

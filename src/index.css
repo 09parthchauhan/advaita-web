@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Geist:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,10 +15,10 @@
   --color-brand-green: #4a9e1a;
   --color-ink: #111111;
   --color-muted: #676665;
-  --color-page: #f6f6f1;
-  --color-surface: #fbfbf8;
+  --color-page: #ffffff;
+  --color-surface: #f5f5f3;
   --font-ui: 'Geist', sans-serif;
-  --font-display: 'Faculty Glyphic', 'Geist', sans-serif;
+  --font-display: 'Geist', sans-serif;
   --gradient-brand: linear-gradient(90deg, rgba(244,123,32,0.22) 0%, rgba(245,208,0,0.18) 50%, rgba(134,210,150,0.22) 100%);
   --gradient-hero-card: linear-gradient(135deg, rgba(244,123,32,0.22) 0%, rgba(245,208,0,0.18) 50%, rgba(134,210,150,0.22) 100%);
 }
@@ -3062,6 +3062,10 @@ p, span, button, a, li {
    Shared Controls
    Cross-component button affordances that are intentionally global.
    ========================================================================== */
+.arrow-button {
+  border-radius: 6px;
+}
+
 .arrow-button .arrow-icon {
   flex-shrink: 0;
   transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
@@ -3236,6 +3240,10 @@ p, span, button, a, li {
 
 .platform-page .nav-feature-art span {
   color: rgba(247, 247, 239, 0.72);
+}
+
+.platform-page .site-footer .site-footer-logo-row span {
+  color: #111111 !important;
 }
 
 .platform-shell {
@@ -3818,8 +3826,14 @@ p, span, button, a, li {
 
 .data-interface-hero h1 {
   font-size: clamp(52px, 6.2vw, 92px);
+  line-height: 0.96;
   margin-bottom: 24px;
   max-width: 1040px;
+}
+
+.data-interface-hero h1 .headline-reveal-line {
+  line-height: 0.96;
+  padding-bottom: 0.02em;
 }
 
 .data-interface-hero-copy > p:last-child,

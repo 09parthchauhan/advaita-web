@@ -269,7 +269,7 @@ export default function TeamsSection() {
 
         {/* Tab selector — no inner borders */}
         <div className={`team-inner-reveal ${visible ? 'is-visible' : ''}`} style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px', transitionDelay: '0.42s' }}>
-          <div className="teams-tabs" style={{ display: 'inline-flex', border: '0.5px solid #fff3', borderRadius: '0px', overflow: 'hidden' }}>
+          <div className="teams-tabs" style={{ display: 'inline-flex', border: '0.5px solid #fff3', borderRadius: '10px', overflow: 'hidden' }}>
             {TEAMS.map((t, i) => (
               <button
                 key={t.id}
@@ -296,7 +296,7 @@ export default function TeamsSection() {
           className={`teams-card team-card-reveal ${visible ? 'is-visible' : ''}`}
           style={{
             border: '0.5px solid #fff3',
-            borderRadius: '0px',
+            borderRadius: '16px',
             background: '#0a0a0a',
             overflow: 'hidden',
             display: 'grid',

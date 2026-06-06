@@ -2,58 +2,10 @@ import { useState, useEffect, useRef } from 'react'
 import styles from './Navbar.module.css'
 
 const navLinks = [
+  { label: 'Product', href: '/product' },
+  { label: 'Platform', href: '/platforms' },
   {
-    label: 'PRODUCT',
-    groups: [
-      {
-        title: 'By Teams',
-        items: [
-          { label: 'Product Teams', href: '/product/teams/product' },
-          { label: 'Growth Teams', href: '/product/teams/growth' },
-          { label: 'Data Teams', href: '/product/teams/data' },
-        ],
-      },
-      {
-        title: 'By Features',
-        items: [
-          { label: 'AI Q&A', href: '/product/features/ai-qa' },
-          { label: 'Experiment Analysis', href: '/product/features/experiment-analysis' },
-          { label: 'Root Cause Analysis', href: '/product/features/root-cause-analysis' },
-          { label: 'KPI Tracking', href: '/product/features/kpi-tracking' },
-        ],
-      },
-      {
-        title: 'Analysis',
-        items: [
-          { label: 'Web Analysis', href: '/product/analysis/web' },
-          { label: 'Product Analysis', href: '/product/analysis/product' },
-          { label: 'Mobile Analysis', href: '/product/analysis/mobile' },
-        ],
-      },
-    ],
-  },
-  {
-    label: 'PLATFORMS',
-    groups: [
-      {
-        title: 'Advaita Platform',
-        items: [
-          { label: 'Advaita Dashboard', href: '/platforms/dashboard', icon: 'dashboard', accent: '#f5820a' },
-          { label: 'Advaita AI Analysis Agents', href: '/platforms/ai-analysis-agents', icon: 'agent', accent: '#4a9e1a' },
-          { label: 'Data Interface', href: '/platforms/data-intelligence', icon: 'data', accent: '#f5d000' },
-        ],
-      },
-    ],
-    featured: {
-      title: 'Advaita Dashboard',
-      eyebrow: 'Platform',
-      description: 'One workspace for product metrics, cohorts and AI analysis.',
-      href: '/platforms/dashboard',
-      tone: 'platform',
-    },
-  },
-  {
-    label: 'COMPANY',
+    label: 'Company',
     groups: [
       {
         title: 'Company',
@@ -73,7 +25,7 @@ const navLinks = [
     },
   },
   {
-    label: 'DOCS',
+    label: 'Docs',
     groups: [
       {
         title: 'Documentation',
@@ -92,7 +44,7 @@ const navLinks = [
       tone: 'docs',
     },
   },
-  { label: 'PRICING', href: '/pricing' },
+  { label: 'Pricing', href: '/pricing' },
 ]
 
 function NavIcon({ type }) {
@@ -175,7 +127,7 @@ function NavIcon({ type }) {
   )
 }
 
-export default function Navbar() {
+export default function Navbar({ bg = '#F6F6F1' }) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileExpanded, setMobileExpanded] = useState('PRODUCT')
   const [activeDesktopIndex, setActiveDesktopIndex] = useState(null)
@@ -228,7 +180,7 @@ export default function Navbar() {
       style={{
         position: 'sticky',
         top: visible ? 0 : '-96px',
-        backgroundColor: '#F6F6F1',
+        backgroundColor: bg,
         opacity: visible ? 1 : 0,
         pointerEvents: visible ? 'auto' : 'none',
         transition: 'top 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease',
@@ -278,7 +230,7 @@ export default function Navbar() {
           </div>
           <a
             href="https://signup.acaiplatform.ai/login"
-            className="arrow-button text-[13px] font-medium text-jet-black border border-jet-black px-5 py-2 hover:bg-[#d4d4d4] transition-all duration-200 cursor-pointer"
+            className="arrow-button text-[13px] font-medium text-jet-black border border-jet-black px-5 py-2 hover:bg-[#f5820a] hover:border-[#f5820a] hover:text-white hover:-translate-y-0.5 transition-all duration-200 cursor-pointer rounded-[6px]"
             style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '10px' }}
           >
             LOGIN
@@ -344,7 +296,7 @@ export default function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-black/10 px-8 py-4 flex flex-col gap-3 md:hidden" style={{ background: 'rgba(246,246,241,0.98)' }}>
+        <div className="border-t border-black/10 px-8 py-4 flex flex-col gap-3 md:hidden" style={{ background: bg }}>
           {navLinks.map((link) => (
             <div key={link.label}>
               {link.groups ? (

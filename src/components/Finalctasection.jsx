@@ -107,7 +107,7 @@ export default function FinalCtaSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} style={{ background: '#F6F6F1', padding: '0' }}>
+    <section ref={sectionRef} style={{ background: '#f5f5f3', padding: '0' }}>
       <div style={{ position: 'relative', overflow: 'hidden', background: '#030303', minHeight: 'clamp(360px, 42vh, 440px)', display: 'flex', alignItems: 'center' }}>
         <CtaParticleField />
 
@@ -141,9 +141,9 @@ export default function FinalCtaSection() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '12px',
-                  background: '#F6F6F1',
+                  background: '#f5f5f3',
                   color: '#111',
-                  border: '1px solid #F6F6F1',
+                  border: '1px solid #f5f5f3',
                   padding: '17px 30px',
                   fontSize: '18px',
                   fontWeight: '600',

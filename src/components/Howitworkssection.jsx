@@ -102,7 +102,7 @@ export default function HowItWorksSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} style={{ background: '#F6F6F1', padding: '100px 0' }}>
+    <section ref={sectionRef} style={{ background: '#f5f5f3', padding: '100px 0' }}>
       <div className="hiw-container" style={{ maxWidth: '1480px', margin: '0 auto', padding: '0 40px' }}>
         <div className="hiw-grid" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: '80px', alignItems: 'center' }}>
 

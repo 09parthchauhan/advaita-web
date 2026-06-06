@@ -255,7 +255,7 @@ export default function KeyFeaturesSection() {
   const PreviewComponent = PREVIEWS[FEATURES[active].preview]
 
   return (
-    <section ref={sectionRef} style={{ background: '#F6F6F1', padding: '96px 0' }}>
+    <section ref={sectionRef} style={{ background: '#f5f5f3', padding: '96px 0' }}>
       <style>{`
         @keyframes spin { to { transform: rotate(360deg); } }
         @keyframes msgIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
@@ -286,7 +286,7 @@ export default function KeyFeaturesSection() {
         {/* LEFT */}
         <div className={`scroll-reveal-left ${visible ? 'is-visible' : ''}`} style={{ width:'100%', transitionDelay: '140ms' }}>
           <div style={{ marginBottom: '20px' }}>
-            <h3 style={{ fontFamily: "'Faculty Glyphic', 'Geist', sans-serif", fontSize: 'clamp(26px, 5vw, 32px)', fontWeight: '520', letterSpacing: '-0.04em', color: '#111', lineHeight: 1.3}}>Grow Smarter, Not Harder</h3>
+            <h3 style={{ fontFamily: "'Geist', sans-serif", fontSize: 'clamp(26px, 5vw, 32px)', fontWeight: '520', letterSpacing: '-0.04em', color: '#111', lineHeight: 1.3}}>Grow Smarter, Not Harder</h3>
             <p style={{ fontSize: '18px', color: '#4d4d4d', lineHeight: 1.4, marginTop: '20px', fontWeight: '400', letterSpacing: '-0.02em' }}>Gain deep, AI-powered visibility into every user interaction and uncover insights you never knew you were missing.</p>
           </div>
 
@@ -307,7 +307,7 @@ export default function KeyFeaturesSection() {
         </div>
 
         {/* RIGHT — large rounded gradient bg, preview floats inside */}
-        <div className={`kf-preview scroll-reveal-right ${visible ? 'is-visible' : ''}`} style={{ position: 'sticky', top: '80px', height: '750px', borderRadius: '0px', overflow: 'hidden', marginLeft: '40px', transitionDelay: '260ms' }}>
+        <div className={`kf-preview scroll-reveal-right ${visible ? 'is-visible' : ''}`} style={{ position: 'sticky', top: '80px', height: '750px', borderRadius: '16px', overflow: 'hidden', marginLeft: '40px', transitionDelay: '260ms' }}>
 
           {/* Gradient background */}
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, #f5c4a0 0%, #f5d890 30%, #c8f0c8 65%, #c4c8f5 100%)' }} />
@@ -322,7 +322,7 @@ export default function KeyFeaturesSection() {
           <div key={active} className="kf-preview-card" style={{
             position: 'absolute',
             top: '36px', bottom: '0px', left: '40px', right: '0px',
-            borderRadius: '0px', overflow: 'hidden',
+            borderRadius: '12px', overflow: 'hidden',
             boxShadow: '0 32px 80px rgba(0,0,0,0.2), 0 8px 24px rgba(0,0,0,0.12)',
           }}>
             <PreviewComponent />

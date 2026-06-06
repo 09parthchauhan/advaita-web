@@ -187,19 +187,30 @@
   font-size: 16px;
   font-weight: 600;
   min-height: 110px;
-  transition: opacity 0.2s;
+  transition: background 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease;
 }
 
 .ctaButton:hover {
-  opacity: 0.85;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
 }
 
 .ctaPrimary {
   background: #111;
+  border-radius: 10px 0 0 10px;
+}
+
+.ctaPrimary:hover {
+  background: #f5820a;
 }
 
 .ctaSecondary {
   background: #252525;
+  border-radius: 0 10px 10px 0;
+}
+
+.ctaSecondary:hover {
+  background: #333333;
 }
 
 @keyframes heroStackIn {

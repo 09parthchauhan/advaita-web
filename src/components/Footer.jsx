@@ -13,10 +13,9 @@ const footerColumns = [
   {
     title: 'PLATFORM',
     links: [
-      { label: 'Advaita Dashboard', href: '/platforms/dashboard' },
-      { label: 'AI Analysis Agents', href: '/platforms/ai-analysis-agents' },
-      { label: 'Data Interface', href: '/platforms/data-intelligence' },
+      { label: 'Platform', href: '/platforms' },
       { label: 'Web Analysis', href: '/product/analysis/web' },
+      { label: 'Product Analysis', href: '/product/analysis/product' },
       { label: 'Mobile Analysis', href: '/product/analysis/mobile' },
     ],
   },

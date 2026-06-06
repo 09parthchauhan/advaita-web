@@ -54,7 +54,7 @@ function AboutVisual() {
   return (
     <div className="about-visual" aria-hidden="true">
       <div className="about-visual-header">
-        <img src="/Logo.png" alt="" />
+        <img src="/logo.png" alt="" />
         <span>Advaita Intelligence</span>
       </div>
       <div className="about-visual-flow">

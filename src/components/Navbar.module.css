@@ -307,10 +307,13 @@
   background: #111111;
   color: #f6f6f1;
   border: 1px solid #111111;
-  transition: background 0.2s ease, color 0.2s ease;
+  border-radius: 6px;
+  transition: background 0.22s ease, border-color 0.22s ease, color 0.22s ease, transform 0.22s ease;
 }
 
 .getStartedButton:hover {
-  background: #d4d4d4;
-  color: #111111;
+  background: #f5820a;
+  border-color: #f5820a;
+  color: #ffffff;
+  transform: translateY(-2px);
 }
