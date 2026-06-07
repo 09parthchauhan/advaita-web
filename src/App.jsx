@@ -11,6 +11,8 @@ import ProductPage from './pages/ProductPage'
 import ProductTeamPage from './pages/ProductTeamPage'
 import AnalysisPage from './pages/AnalysisPage'
 import FeaturesPage from './pages/FeaturesPage'
+import Privacy from './pages/Privacy'
+import TermsOfService from './pages/TermsOfService'
 
 export default function App() {
   return (
@@ -29,6 +31,8 @@ export default function App() {
         <Route path="/product/analysis/:type" element={<AnalysisPage />} />
         <Route path="/platforms" element={<Platform />} />
         <Route path="/features/:feature" element={<FeaturesPage />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<TermsOfService />} />
       </Routes>
     </BrowserRouter>
   )

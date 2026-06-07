@@ -1,7 +1,7 @@
 import Navbar from '../components/Navbar'
 import AnnouncementBar from '../components/Announcementbar'
 import HeroSection from '../components/Herosection'
-{/* import BackedBy from '../components/BackedBy' */}
+// import BackedBy from '../components/BackedBy'
 import KeyFeaturesSection from '../components/KeyFeaturesSection'
 import TeamsSection from '../components/Teamssection'
 import HowItWorksSection from '../components/Howitworkssection'
@@ -17,7 +17,6 @@ export default function Home() {
       <Navbar bg="#ffffff" />
       <main>
         <HeroSection />
-        {/* <BackedBy /> */}
         <KeyFeaturesSection />
         <TeamsSection />
         <HowItWorksSection />
