@@ -25,7 +25,7 @@ export default function JavaScriptSDK() {
       </p>
 
       <div className="docs-callout docs-callout-info">
-        <strong>Using React, Vue, or Svelte?</strong> Consider the <a href="/docs/sdks/typescript-browser">TypeScript Browser SDK</a> — it has a plugin system, autocapture, and first-class TypeScript support.
+        <p><strong>Using React, Vue, or Svelte?</strong> Consider the <a href="/docs/sdks/typescript-browser">TypeScript Browser SDK</a> — it has a plugin system, autocapture, and first-class TypeScript support.</p>
       </div>
 
       <h2 id="install">Installation</h2>

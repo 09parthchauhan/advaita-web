@@ -24,7 +24,7 @@ export default function NodeSDK() {
       </p>
 
       <div className="docs-callout docs-callout-warning">
-        <strong>Server-only.</strong> Do not bundle <code>acai-node</code> into browser builds. Use <code>acai-js</code> or <code>@acai/analytics-browser</code> for client-side tracking.
+        <p><strong>Server-only.</strong> Do not bundle <code>acai-node</code> into browser builds. Use <code>acai-js</code> or <code>@acai/analytics-browser</code> for client-side tracking.</p>
       </div>
 
       <h2 id="install">Installation</h2>
@@ -52,7 +52,7 @@ const client = init('YOUR_API_KEY', {
 await client.flush()`}</CodeBlock>
 
       <div className="docs-callout docs-callout-info">
-        Always call <code>client.flush()</code> before your process exits to ensure all buffered events are sent.
+        <p>Always call <code>client.flush()</code> before your process exits to ensure all buffered events are sent.</p>
       </div>
 
       <h2 id="identify">Identify users</h2>

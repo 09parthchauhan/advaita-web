@@ -59,7 +59,7 @@ client.flush()
 client.shutdown()`}</CodeBlock>
 
       <div className="docs-callout docs-callout-info">
-        The SDK registers an <code>atexit</code> handler automatically, but calling <code>client.shutdown()</code> explicitly is recommended in long-running services.
+        <p>The SDK registers an <code>atexit</code> handler automatically, but calling <code>client.shutdown()</code> explicitly is recommended in long-running services.</p>
       </div>
 
       <h2 id="identify">Identify users</h2>
