@@ -4,10 +4,10 @@ const footerColumns = [
   {
     title: 'PRODUCT',
     links: [
-      { label: 'AI Q&A', href: '/product/features/ai-qa' },
-      { label: 'Experiment Analysis', href: '/product/features/experiment-analysis' },
-      { label: 'Root Cause Analysis', href: '/product/features/root-cause-analysis' },
-      { label: 'KPI Tracking', href: '/product/features/kpi-tracking' },
+      { label: 'AI Q&A', href: '/features/ai-qa' },
+      { label: 'Experiment Analysis', href: '/features/experiment-analysis' },
+      { label: 'Root Cause Analysis', href: '/features/root-cause-analysis' },
+      { label: 'KPI Tracking', href: '/features/kpi-tracking' },
     ],
   },
   {
