@@ -119,6 +119,11 @@ export default function Navbar({ bg = '#F6F6F1' }) {
 
   useEffect(() => {
     const onScroll = () => {
+      if (mobileOpen) {
+        lastScrollY.current = window.scrollY
+        return
+      }
+
       const currentScrollY = window.scrollY
       const scrollDelta = currentScrollY - lastScrollY.current
 
@@ -126,7 +131,6 @@ export default function Navbar({ bg = '#F6F6F1' }) {
         setVisible(true)
       } else if (scrollDelta > 4) {
         setVisible(false)
-        setMobileOpen(false)
       } else if (scrollDelta < -4) {
         setVisible(true)
       }
@@ -134,10 +138,9 @@ export default function Navbar({ bg = '#F6F6F1' }) {
       lastScrollY.current = currentScrollY
     }
 
-    onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [mobileOpen])
 
   const handleDesktopMenuEnter = (index) => {
     if (!navLinks[index].groups) {
@@ -268,7 +271,11 @@ export default function Navbar({ bg = '#F6F6F1' }) {
         {/* Mobile Hamburger */}
         <button
           className="md:hidden flex flex-col gap-1.5 p-1 bg-transparent border-none cursor-pointer"
-          onClick={() => setMobileOpen(!mobileOpen)}
+          onClick={() => {
+            const next = !mobileOpen
+            setMobileOpen(next)
+            if (next) setVisible(true)
+          }}
         >
           <span className={`block w-5 h-0.5 bg-jet-black transition-all duration-200 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
           <span className={`block w-5 h-0.5 bg-jet-black transition-all duration-200 ${mobileOpen ? 'opacity-0' : ''}`} />
