@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import AnnouncementBar from '../components/Announcementbar'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
@@ -38,7 +37,6 @@ export default function Careers() {
 
   return (
     <div className="careers-page min-h-screen bg-soft-gray">
-      <AnnouncementBar />
       <Navbar />
 
       <main>

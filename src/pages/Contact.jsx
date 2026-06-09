@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import AnnouncementBar from '../components/Announcementbar'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import FaqSection from '../components/Faqsection'
@@ -46,7 +45,6 @@ export default function Contact() {
 
   return (
     <div className="contact-page min-h-screen bg-soft-gray">
-      <AnnouncementBar />
       <Navbar />
 
       <main>

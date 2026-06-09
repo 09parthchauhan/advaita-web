@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import AnnouncementBar from '../components/Announcementbar'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
@@ -210,7 +209,6 @@ export default function Pricing() {
 
   return (
     <div className="pricing-page min-h-screen bg-soft-gray">
-      <AnnouncementBar />
       <Navbar />
 
       <main>
