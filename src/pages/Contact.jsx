@@ -7,12 +7,12 @@ import FinalCtaSection from '../components/Finalctasection'
 const contactCards = [
   {
     title: 'Support',
-    email: 'support@advaita-tech.com',
+    email: 'support@acaiplatform.ai.com',
     copy: 'Get help with setup, troubleshooting, or day-to-day product analytics questions.',
   },
   {
     title: 'Sales',
-    email: 'sales@advaita-tech.com',
+    email: 'sales@acaiplatform.ai',
     copy: 'Have questions about plans, private hosting, or the right solution for your team?',
   },
 ]
