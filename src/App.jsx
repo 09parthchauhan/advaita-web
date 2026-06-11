@@ -13,6 +13,7 @@ import AnalysisPage from './pages/AnalysisPage'
 import FeaturesPage from './pages/FeaturesPage'
 import Privacy from './pages/Privacy'
 import TermsOfService from './pages/TermsOfService'
+import RefundPolicy from './pages/RefundPolicy'
 
 export default function App() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
         <Route path="/features/:feature" element={<FeaturesPage />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<TermsOfService />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
       </Routes>
     </BrowserRouter>
   )
