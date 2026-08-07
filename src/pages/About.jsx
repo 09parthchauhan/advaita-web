@@ -180,6 +180,9 @@ export default function About() {
                   Nr. Vasupujya Bunglows, S A C,<br />
                   Ahmedabad - 380015, Gujarat, India
                 </address>
+                <a className="about-people-link" href="mailto:info@acaiplatform.ai">
+                  info@acaiplatform.ai
+                </a>
               </article>
             </div>
           </div>
