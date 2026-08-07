@@ -367,6 +367,7 @@ html {
 
 .about-hero h1,
 .about-story-section h2,
+.about-people-section h2,
 .about-principles-section h2,
 .about-system-card h2 {
   color: #111111;
@@ -531,6 +532,7 @@ html {
 }
 
 .about-story-section,
+.about-people-section,
 .about-principles-section {
   padding: 104px 0;
   border-top: 1px solid rgba(17, 17, 17, 0.1);
@@ -544,6 +546,7 @@ html {
 }
 
 .about-story-section h2,
+.about-people-section h2,
 .about-principles-section h2,
 .about-system-card h2 {
   max-width: 900px;
@@ -614,6 +617,88 @@ html {
   font-weight: 500;
   line-height: 1.6;
   margin: 0;
+}
+
+.about-people-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.about-founder-card,
+.about-office-card {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background: #fbfbf8;
+  border: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+.about-office-card {
+  background: #eeece4;
+}
+
+.about-people-eyebrow {
+  display: inline-flex;
+  color: #8b7b68;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 72px;
+}
+
+.about-founder-card h3,
+.about-office-card h3 {
+  color: #111111;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0 0 14px;
+}
+
+.about-founder-role {
+  color: #111111;
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.5;
+  margin: 0 0 4px;
+}
+
+.about-founder-education {
+  color: #565653;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.about-office-address {
+  color: #111111;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.about-people-link {
+  align-self: flex-start;
+  margin-top: 22px;
+  color: #111111;
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.4;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.28);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.about-people-link:hover {
+  color: #f5820a;
+  border-color: #f5820a;
 }
 
 .about-system-section {
@@ -2714,6 +2799,19 @@ html {
     margin-bottom: 54px;
   }
 
+  .about-people-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-founder-card,
+  .about-office-card {
+    min-height: auto;
+  }
+
+  .about-people-eyebrow {
+    margin-bottom: 42px;
+  }
+
   .pricing-grid {
     grid-template-columns: 1fr;
     max-width: 660px;
@@ -2822,14 +2920,26 @@ html {
   }
 
   .about-story-section,
+  .about-people-section,
   .about-principles-section {
     padding: 72px 0;
   }
 
   .about-story-section h2,
+  .about-people-section h2,
   .about-principles-section h2,
   .about-system-card h2 {
     font-size: 42px;
+  }
+
+  .about-founder-card,
+  .about-office-card {
+    padding: 24px;
+  }
+
+  .about-founder-card h3,
+  .about-office-card h3 {
+    font-size: 24px;
   }
 
   .about-visual {

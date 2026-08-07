@@ -87,6 +87,7 @@ function AboutVisual() {
 export default function About() {
   const [heroRef, heroVisible] = useReveal(0.1)
   const [storyRef, storyVisible] = useReveal(0.18)
+  const [peopleRef, peopleVisible] = useReveal(0.16)
   const [principlesRef, principlesVisible] = useReveal(0.16)
   const [systemRef, systemVisible] = useReveal(0.18)
 
@@ -136,6 +137,50 @@ export default function About() {
               <p className={`scroll-reveal ${storyVisible ? 'is-visible' : ''}`} style={{ transitionDelay: '0.16s' }}>
                 The goal is simple: give every team the confidence of a strong analytics partner, without slowing down the speed of product work.
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section ref={peopleRef} className="about-people-section">
+          <div className="about-shell">
+            <div className="about-section-heading">
+              <div className={`about-section-label scroll-reveal ${peopleVisible ? 'is-visible' : ''}`}>
+                <span />
+                Leadership
+              </div>
+              <h2>
+                <span className="block overflow-hidden">
+                  <span className={`headline-reveal-line ${peopleVisible ? 'is-visible' : ''}`}>The people building Advaita.</span>
+                </span>
+              </h2>
+            </div>
+
+            <div className="about-people-grid">
+              <article
+                className={`about-founder-card scroll-reveal ${peopleVisible ? 'is-visible' : ''}`}
+                style={{ transitionDelay: '0.2s' }}
+              >
+                <span className="about-people-eyebrow">Founder</span>
+                <h3>Yash Chauhan</h3>
+                <p className="about-founder-role">CEO, Co-Founder</p>
+                <p className="about-founder-education">IIT Bombay '22 | Brown University '25</p>
+                <a className="about-people-link" href="mailto:yash_chauhan@advaita-tech.com">
+                  yash_chauhan@advaita-tech.com
+                </a>
+              </article>
+
+              <article
+                className={`about-office-card scroll-reveal ${peopleVisible ? 'is-visible' : ''}`}
+                style={{ transitionDelay: '0.32s' }}
+              >
+                <span className="about-people-eyebrow">Registered Office</span>
+                <h3>Advaita Intelligence Pvt. Ltd.</h3>
+                <address className="about-office-address">
+                  GF, 1-Shop, Sir Mount,<br />
+                  Nr. Vasupujya Bunglows, S A C,<br />
+                  Ahmedabad - 380015, Gujarat, India
+                </address>
+              </article>
             </div>
           </div>
         </section>
