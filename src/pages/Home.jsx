@@ -4,6 +4,7 @@ import HeroSection from '../components/Herosection'
 import KeyFeaturesSection from '../components/KeyFeaturesSection'
 import TeamsSection from '../components/Teamssection'
 import HowItWorksSection from '../components/Howitworkssection'
+import VideoSection from '../components/Videosection'
 import AnalysisCardsSection from '../components/Analysiscardssection'
 import FaqSection from '../components/Faqsection'
 import FinalCtaSection from '../components/Finalctasection'
@@ -18,6 +19,7 @@ export default function Home() {
         <KeyFeaturesSection />
         <TeamsSection />
         <HowItWorksSection />
+        <VideoSection />
         <AnalysisCardsSection />
         <FaqSection />
         <FinalCtaSection />
