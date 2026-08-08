@@ -1,4 +1,7 @@
+import VideoEmbed from '../components/VideoEmbed'
+
 export const toc = [
+  { id: 'video-walkthrough', label: 'Video walkthrough', level: 2 },
   { id: 'what-is-advaita', label: 'What is Advaita?', level: 2 },
   { id: 'how-it-works', label: 'How it works', level: 2 },
   { id: 'key-capabilities', label: 'Key capabilities', level: 2 },
@@ -32,6 +35,14 @@ export default function Introduction() {
           </div>
         ))}
       </div>
+
+      <h2 id="video-walkthrough">Video walkthrough</h2>
+      <p>New here? This tutorial walks you through getting started with the ACAI chatbot.</p>
+      <VideoEmbed
+        videoId="lEEDp1pOf2g"
+        title="Get started with the ACAI chatbot"
+        caption="Getting started with the ACAI chatbot — connect your data and ask your first questions."
+      />
 
       <h2 id="what-is-advaita">What is Advaita?</h2>
       <p>

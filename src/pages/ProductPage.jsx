@@ -261,6 +261,15 @@ export default function ProductPage() {
               </a>
               <div className="w-px h-5 bg-black/[0.15]" />
               <a
+                href="https://www.nvidia.com/en-us/startups/"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 no-underline opacity-55 hover:opacity-100 transition-opacity duration-200"
+              >
+                <img src="/nvidia.jpeg" alt="NVIDIA Inception Program" className="h-[46px] sm:h-[58px] w-auto object-contain" />
+              </a>
+              <div className="w-px h-5 bg-black/[0.15]" />
+              <a
                 href="https://ihubgujarat.in/srujan"
                 target="_blank"
                 rel="noreferrer"

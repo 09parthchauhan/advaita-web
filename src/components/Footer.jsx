@@ -24,7 +24,7 @@ const footerColumns = [
     links: [
       { label: 'Get Started', href: '/docs#getting-started' },
       { label: 'SDK', href: '/docs#sdks' },
-      { label: 'Video Tutorials', href: '/docs#video-tutorials', badge: 'Soon' },
+      { label: 'Video Tutorials', href: '/docs#video-tutorials'},
       { label: 'Integrations', href: '/docs#sdks', badge: 'Soon' },
     ],
   },

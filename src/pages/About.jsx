@@ -141,53 +141,6 @@ export default function About() {
           </div>
         </section>
 
-        <section ref={peopleRef} className="about-people-section">
-          <div className="about-shell">
-            <div className="about-section-heading">
-              <div className={`about-section-label scroll-reveal ${peopleVisible ? 'is-visible' : ''}`}>
-                <span />
-                Leadership
-              </div>
-              <h2>
-                <span className="block overflow-hidden">
-                  <span className={`headline-reveal-line ${peopleVisible ? 'is-visible' : ''}`}>The people building Advaita.</span>
-                </span>
-              </h2>
-            </div>
-
-            <div className="about-people-grid">
-              <article
-                className={`about-founder-card scroll-reveal ${peopleVisible ? 'is-visible' : ''}`}
-                style={{ transitionDelay: '0.2s' }}
-              >
-                <span className="about-people-eyebrow">Founder</span>
-                <h3>Yash Chauhan</h3>
-                <p className="about-founder-role">CEO, Co-Founder</p>
-                <p className="about-founder-education">IIT Bombay '22 | Brown University '25</p>
-                <a className="about-people-link" href="mailto:yash_chauhan@advaita-tech.com">
-                  yash_chauhan@advaita-tech.com
-                </a>
-              </article>
-
-              <article
-                className={`about-office-card scroll-reveal ${peopleVisible ? 'is-visible' : ''}`}
-                style={{ transitionDelay: '0.32s' }}
-              >
-                <span className="about-people-eyebrow">Registered Office</span>
-                <h3>Advaita Intelligence Pvt. Ltd.</h3>
-                <address className="about-office-address">
-                  GF, 1-Shop, Sir Mount,<br />
-                  Nr. Vasupujya Bunglows, S A C,<br />
-                  Ahmedabad - 380015, Gujarat, India
-                </address>
-                <a className="about-people-link" href="mailto:info@acaiplatform.ai">
-                  info@acaiplatform.ai
-                </a>
-              </article>
-            </div>
-          </div>
-        </section>
-
         <section ref={principlesRef} className="about-principles-section">
           <div className="about-shell">
             <div className="about-section-heading">
@@ -251,6 +204,40 @@ export default function About() {
                   <path d="M2 2h10v10M2 12L12 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                 </svg>
               </a>
+            </div>
+          </div>
+        </section>
+
+        <section ref={peopleRef} className="about-people-section">
+          <div className="about-shell">
+            <div className="about-section-heading about-section-heading--center">
+              <div className={`about-section-label scroll-reveal ${peopleVisible ? 'is-visible' : ''}`}>
+                <span />
+                Company
+              </div>
+              <h2>
+                <span className="block overflow-hidden">
+                  <span className={`headline-reveal-line ${peopleVisible ? 'is-visible' : ''}`}>Where to find Advaita.</span>
+                </span>
+              </h2>
+            </div>
+
+            <div className="about-people-grid">
+              <article
+                className={`about-office-card scroll-reveal ${peopleVisible ? 'is-visible' : ''}`}
+                style={{ transitionDelay: '0.2s' }}
+              >
+                <span className="about-people-eyebrow">Registered Office</span>
+                <h3>Advaita Intelligence Pvt. Ltd.</h3>
+                <address className="about-office-address">
+                  GF, 1-Shop, Sir Mount,<br />
+                  Nr. Vasupujya Bunglows, S A C,<br />
+                  Ahmedabad - 380015, Gujarat, India
+                </address>
+                <a className="about-people-link" href="mailto:info@acaiplatform.ai">
+                  info@acaiplatform.ai
+                </a>
+              </article>
             </div>
           </div>
         </section>

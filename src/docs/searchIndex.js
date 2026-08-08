@@ -4,9 +4,9 @@ export const SEARCH_INDEX = [
     section: 'getting-started', page: 'introduction',
     href: '/docs/getting-started/introduction',
     title: 'Introduction to Advaita',
-    tags: ['overview', 'what is advaita', 'platform', 'getting started'],
+    tags: ['overview', 'what is advaita', 'platform', 'getting started', 'video', 'tutorial', 'chatbot'],
     excerpt: 'AI-native product intelligence platform that turns raw clickstream events into decisions your team can trust.',
-    headings: ['What is Advaita?', 'How it works', 'Key capabilities', 'Architecture', 'Next steps'],
+    headings: ['Video walkthrough', 'What is Advaita?', 'How it works', 'Key capabilities', 'Architecture', 'Next steps'],
   },
   {
     section: 'getting-started', page: 'quickstart',
