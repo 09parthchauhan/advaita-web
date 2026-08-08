@@ -113,32 +113,18 @@ export default function HeroSection() {
           {/* Investment Info */}
           <div className="flex flex-wrap gap-3">
             <a
-              href="https://ihubgujarat.in/"
+              href="https://www.nvidia.com/en-us/startups/"
               target="_blank"
               rel="noreferrer"
-              className={`${styles.featurePill} ${styles.animPillOne} flex items-center gap-2 px-4 py-2.5`}
-              style={{ textDecoration: 'none' }}
+              className={`${styles.nvidiaBadge} ${styles.animPillOne}`}
             >
-              <img src="/i-hub.png" alt="iHub Gujarat" style={{ height: '18px', width: 'auto', objectFit: 'contain' }} />
-              <span style={{ fontSize: '13px', fontWeight: '500', color: '#111' }}>Backed by iHub</span>
-            </a>
-            <a
-              href="https://ihubgujarat.in/srujan"
-              target="_blank"
-              rel="noreferrer"
-              className={`${styles.featurePill} ${styles.animPillTwo} flex items-center gap-2 px-4 py-2.5`}
-              style={{ textDecoration: 'none', minWidth: '265px', justifyContent: 'space-between' }}
-            >
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                <span style={{ width: '10px', height: '10px', background: '#f5820a', flexShrink: 0 }} />
-                <span style={{ fontSize: '13px', fontWeight: '600', color: '#111', lineHeight: 1 }}>Startup Srujan - Grant S4 Recipient</span>
-              </span>
+              <img src="/nvidia.jpeg" alt="NVIDIA Inception Program" />
             </a>
           </div>
         </div>
 
-        {/* Bottom — CTA right */}
-        <div className={`${styles.ctaWrap} flex justify-end`}>
+        {/* Bottom — CTA left */}
+        <div className={`${styles.ctaWrap} flex justify-start`}>
           <div className={`${styles.ctaGrid} grid grid-cols-2`}>
             <a
               href="https://signup.acaiplatform.ai/"
