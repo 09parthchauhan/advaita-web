@@ -125,8 +125,8 @@ export default function HeroSection() {
                 rel="noreferrer"
                 className="flex items-center gap-2 no-underline opacity-55 hover:opacity-100 transition-opacity duration-200"
               >
-                <img src="/i-hub.png" alt="iHub Gujarat" className="h-5 w-auto object-contain grayscale" />
-                <span className="text-[14px] font-[500] text-jet-black">iHub Gujarat</span>
+                <img src="/i-hub.png" alt="iHub" className="h-5 w-auto object-contain grayscale" />
+                <span className="text-[14px] font-[500] text-jet-black">iHub </span>
               </a>
               <div className="w-px h-5 bg-black/[0.15]" />
               <a
