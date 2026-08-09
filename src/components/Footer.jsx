@@ -103,6 +103,15 @@ export default function Footer() {
         <p>© 2026 Advaita Intelligence Private Limited.</p>
         <p>Ahmedabad, India</p>
       </div>
+
+      <div className="site-footer-trademark">
+        <p>
+          © 2025 NVIDIA, the
+          <img className="footer-nvidia-mark" src="/nvidia-logo.svg" alt="NVIDIA logo" />, and
+          <img className="footer-nvidia-badge" src="/nvidia-inception-badge.svg" alt="NVIDIA Inception Program" />
+          are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries.
+        </p>
+      </div>
     </footer>
   )
 }

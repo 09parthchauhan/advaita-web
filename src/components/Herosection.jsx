@@ -110,16 +110,44 @@ export default function HeroSection() {
             From data overload to unified memory — Advaita helps you see the complete picture of your users.
           </p>
 
-          {/* Investment Info */}
-          <div className="flex flex-wrap gap-3">
-            <a
-              href="https://www.nvidia.com/en-us/startups/"
-              target="_blank"
-              rel="noreferrer"
-              className={`${styles.nvidiaBadge} ${styles.animPillOne}`}
+          {/* Backed by — large label + inline items */}
+          <div className={styles.animPillOne}>
+            <p
+              className="font-[600] text-jet-black mb-5"
+              style={{ fontSize: 'clamp(22px,2.8vw,36px)', letterSpacing: '-0.03em', lineHeight: 1.1 }}
             >
-              <img src="/nvidia.jpeg" alt="NVIDIA Inception Program" />
-            </a>
+              Backed by
+            </p>
+            <div className={`${styles.backedRow} flex items-center gap-8 flex-wrap`}>
+              <a
+                href="https://ihubgujarat.in/"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 no-underline opacity-55 hover:opacity-100 transition-opacity duration-200"
+              >
+                <img src="/i-hub.png" alt="iHub Gujarat" className="h-5 w-auto object-contain grayscale" />
+                <span className="text-[14px] font-[500] text-jet-black">iHub Gujarat</span>
+              </a>
+              <div className="w-px h-5 bg-black/[0.15]" />
+              <a
+                href="https://www.nvidia.com/en-us/startups/"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 no-underline opacity-55 hover:opacity-100 transition-opacity duration-200"
+              >
+                <img src="/nvidia.jpeg" alt="NVIDIA Inception Program" className="h-[46px] sm:h-[58px] w-auto object-contain" />
+              </a>
+              <div className="w-px h-5 bg-black/[0.15]" />
+              <a
+                href="https://ihubgujarat.in/srujan"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 no-underline opacity-55 hover:opacity-100 transition-opacity duration-200"
+              >
+                <span className="w-2 h-2 bg-brand-orange rounded-[2px] flex-shrink-0" />
+                <span className="text-[14px] font-[500] text-jet-black">Startup Srujan — Grant S4 Recipient</span>
+              </a>
+            </div>
           </div>
         </div>
 

@@ -215,11 +215,6 @@ export default function About() {
                 <span />
                 Company
               </div>
-              <h2>
-                <span className="block overflow-hidden">
-                  <span className={`headline-reveal-line ${peopleVisible ? 'is-visible' : ''}`}>Where to find Advaita.</span>
-                </span>
-              </h2>
             </div>
 
             <div className="about-people-grid">

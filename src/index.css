@@ -189,7 +189,8 @@ html {
 }
 
 .site-footer-inner,
-.site-footer-bottom {
+.site-footer-bottom,
+.site-footer-trademark {
   position: relative;
   z-index: 1;
   max-width: 1480px;
@@ -206,7 +207,8 @@ html {
 
 .site-footer-brand,
 .site-footer-column,
-.site-footer-bottom {
+.site-footer-bottom,
+.site-footer-trademark {
   opacity: 0;
   transform: translateY(42px);
   transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
@@ -215,13 +217,18 @@ html {
 
 .site-footer.is-visible .site-footer-brand,
 .site-footer.is-visible .site-footer-column,
-.site-footer.is-visible .site-footer-bottom {
+.site-footer.is-visible .site-footer-bottom,
+.site-footer.is-visible .site-footer-trademark {
   opacity: 1;
   transform: translateY(0);
 }
 
 .site-footer-bottom {
   transition-delay: 0.34s;
+}
+
+.site-footer-trademark {
+  transition-delay: 0.4s;
 }
 
 .site-footer-logo-row {
@@ -2730,6 +2737,37 @@ html {
   margin: 0;
 }
 
+.site-footer-trademark {
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+  margin-top: 22px;
+  padding-top: 20px;
+}
+
+.site-footer-trademark p {
+  color: #8a8985;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 2;
+  margin: 0;
+  max-width: 900px;
+}
+
+.site-footer-trademark img {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+}
+
+.footer-nvidia-mark {
+  height: 15px;
+  margin-left: 7px;
+}
+
+.footer-nvidia-badge {
+  height: 32px;
+  margin: 0 7px;
+}
+
 @media (max-width: 1100px) {
   .about-hero-grid,
   .about-story-grid,
@@ -3144,6 +3182,14 @@ html {
     flex-direction: column;
     align-items: flex-start;
     margin-top: 76px;
+  }
+
+  .footer-nvidia-badge {
+    height: 26px;
+  }
+
+  .footer-nvidia-mark {
+    height: 13px;
   }
 }
 
@@ -5030,6 +5076,7 @@ p, span, button, a, li {
   .site-footer-brand,
   .site-footer-column,
   .site-footer-bottom,
+  .site-footer-trademark,
   .team-inner-reveal,
   .team-card-reveal,
   .team-cta-reveal {
