@@ -86,6 +86,7 @@ function AboutVisual() {
 
 export default function About() {
   const [heroRef, heroVisible] = useReveal(0.1)
+  const [backedRef, backedVisible] = useReveal(0.2)
   const [storyRef, storyVisible] = useReveal(0.18)
   const [peopleRef, peopleVisible] = useReveal(0.16)
   const [principlesRef, principlesVisible] = useReveal(0.16)
@@ -115,6 +116,32 @@ export default function About() {
 
             <div className={`about-hero-card scroll-reveal-right ${heroVisible ? 'is-visible' : ''}`}>
               <AboutVisual />
+            </div>
+          </div>
+        </section>
+
+        <section ref={backedRef} className="about-backed-section">
+          <div className="about-shell">
+            <p className={`about-backed-title scroll-reveal ${backedVisible ? 'is-visible' : ''}`}>
+              Backed by
+            </p>
+            <div
+              className={`about-backed-row scroll-reveal ${backedVisible ? 'is-visible' : ''}`}
+              style={{ transitionDelay: '0.14s' }}
+            >
+              <a href="https://ihubgujarat.in/" target="_blank" rel="noreferrer">
+                <img src="/i-hub.png" alt="iHub Gujarat" className="about-backed-logo" />
+                <span>iHub Gujarat</span>
+              </a>
+              <div className="about-backed-divider" />
+              <a href="https://www.nvidia.com/en-us/startups/" target="_blank" rel="noreferrer">
+                <img src="/nvidia.jpeg" alt="NVIDIA Inception Program" className="about-backed-logo about-backed-logo--nvidia" />
+              </a>
+              <div className="about-backed-divider" />
+              <a href="https://ihubgujarat.in/srujan" target="_blank" rel="noreferrer">
+                <span className="about-backed-dot" />
+                <span>Startup Srujan — Grant S4 Recipient</span>
+              </a>
             </div>
           </div>
         </section>
@@ -219,8 +246,26 @@ export default function About() {
 
             <div className="about-people-grid">
               <article
+                className={`about-founder-card scroll-reveal ${peopleVisible ? 'is-visible' : ''}`}
+                style={{ transitionDelay: '0.14s' }}
+              >
+                <span className="about-people-eyebrow">Founder</span>
+                <div className="about-founder-photo">
+                  <img src="/founder-yash-chauhan.jpeg" alt="Yash Chauhan, CEO and Co-Founder of Advaita Intelligence" />
+                </div>
+                <div className="about-founder-details">
+                  <h3>Yash Chauhan</h3>
+                  <p className="about-founder-role">CEO, Co-Founder</p>
+                  <p className="about-founder-meta">IIT Bombay ’22 &nbsp;|&nbsp; Brown University ’25</p>
+                  <a className="about-people-link" href="mailto:yash_chauhan@advaita-tech.com">
+                    yash_chauhan@advaita-tech.com
+                  </a>
+                </div>
+              </article>
+
+              <article
                 className={`about-office-card scroll-reveal ${peopleVisible ? 'is-visible' : ''}`}
-                style={{ transitionDelay: '0.2s' }}
+                style={{ transitionDelay: '0.26s' }}
               >
                 <span className="about-people-eyebrow">Registered Office</span>
                 <h3>Advaita Intelligence Pvt. Ltd.</h3>
