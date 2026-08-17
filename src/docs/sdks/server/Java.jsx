@@ -19,7 +19,7 @@ export default function JavaSDK() {
 
       <h1>Java SDK</h1>
       <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: '24px' }}>
-        <code>com.acai:acai-java-sdk</code> is the server-side Java SDK. It uses a thread-safe event queue with configurable retries and an optional middleware pipeline. Forked from <strong style={{ color: '#f6f6f1' }}>com.amplitude:java-sdk</strong> (MIT).
+        <code>com.acai:acai-java-sdk</code> is the server-side Java SDK. It uses a thread-safe event queue with configurable retries and an optional middleware pipeline.
       </p>
 
       <h2 id="install">Installation</h2>

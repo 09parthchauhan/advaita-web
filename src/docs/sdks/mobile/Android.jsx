@@ -20,7 +20,7 @@ export default function AndroidSDK() {
 
       <h1>Android SDK</h1>
       <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: '24px' }}>
-        <code>com.acai:analytics-android</code> is the native Android SDK written in Kotlin. It uses a plugin architecture and auto-tracks lifecycle events, sessions, deep links, and screen views. Forked from <strong style={{ color: '#f6f6f1' }}>com.amplitude:analytics-android</strong> (MIT).
+        <code>com.acai:analytics-android</code> is the native Android SDK written in Kotlin. It uses a plugin architecture and auto-tracks lifecycle events, sessions, deep links, and screen views.
       </p>
 
       <h2 id="install">Installation</h2>

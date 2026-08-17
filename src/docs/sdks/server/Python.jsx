@@ -20,7 +20,7 @@ export default function PythonSDK() {
 
       <h1>Python SDK</h1>
       <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: '24px' }}>
-        <code>acai-analytics</code> is the Python server SDK. It processes events on a background thread, batches automatically, and supports a plugin pipeline for enrichment. Forked from <strong style={{ color: '#f6f6f1' }}>amplitude-analytics</strong> (MIT).
+        <code>acai-analytics</code> is the Python server SDK. It processes events on a background thread, batches automatically, and supports a plugin pipeline for enrichment.
       </p>
 
       <h2 id="install">Installation</h2>

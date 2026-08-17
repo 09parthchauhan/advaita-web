@@ -185,12 +185,12 @@
 }
 
 .ctaPrimary {
-  background: #111;
+  background: #f5820a;
   border-radius: 10px 0 0 10px;
 }
 
 .ctaPrimary:hover {
-  background: #f5820a;
+  background: #d96f05;
 }
 
 .ctaSecondary {

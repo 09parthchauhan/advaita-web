@@ -20,7 +20,7 @@ export default function iOSSDK() {
 
       <h1>iOS / Swift SDK</h1>
       <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: '24px' }}>
-        <code>AcaiSwift</code> supports iOS 13+, macOS 10.15+, tvOS 13+, and watchOS 7+. Features include autocapture (screen views, interactions, network requests), offline mode, COPPA controls, and a plugin pipeline. Forked from <strong style={{ color: '#f6f6f1' }}>Amplitude-Swift</strong> (MIT).
+        <code>AcaiSwift</code> supports iOS 13+, macOS 10.15+, tvOS 13+, and watchOS 7+. Features include autocapture (screen views, interactions, network requests), offline mode, COPPA controls, and a plugin pipeline.
       </p>
 
       <h2 id="install">Installation</h2>

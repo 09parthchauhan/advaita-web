@@ -19,7 +19,7 @@ export default function ReactNativeSDK() {
 
       <h1>React Native SDK</h1>
       <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: '24px' }}>
-        <code>@acai/react-native-sdk</code> is backed by native iOS and Android modules via the React Native bridge. It supports session tracking, COPPA controls, and a middleware pipeline. Forked from <strong style={{ color: '#f6f6f1' }}>amplitude-react-native</strong> (MIT).
+        <code>@acai/react-native-sdk</code> is backed by native iOS and Android modules via the React Native bridge. It supports session tracking, COPPA controls, and a middleware pipeline.
       </p>
 
       <h2 id="install">Installation</h2>

@@ -147,7 +147,7 @@ export default function SDKOverview() {
         <div>
           <strong style={{ display: 'block', fontSize: '13px', color: '#a78bfa', marginBottom: '4px' }}>Open-source attribution</strong>
           <p style={{ margin: 0, fontSize: '13px', color: 'rgba(167,139,250,0.8)', lineHeight: 1.6 }}>
-            All Advaita SDKs are forks of <strong style={{ color: '#f6f6f1' }}>Amplitude's open-source SDKs</strong>, released under the <strong style={{ color: '#f6f6f1' }}>MIT License</strong> (Go SDK: Apache 2.0). We retain full MIT attribution and compliance. The wire protocol is compatible with Amplitude's HTTP API v2 format (<code>POST /2/httpapi</code>), pointing to your self-hosted Advaita collector instead.
+            All Advaita SDKs are open source, released under the <strong style={{ color: '#f6f6f1' }}>MIT License</strong> (Go SDK: Apache 2.0). We retain full upstream attribution and license compliance. The wire protocol is a standard HTTP API v2 format (<code>POST /2/httpapi</code>), pointing to your self-hosted Advaita collector.
           </p>
         </div>
       </div>
@@ -194,7 +194,7 @@ export default function SDKOverview() {
       <ul>
         <li>All SDKs follow <strong style={{ color: '#f6f6f1' }}>semantic versioning</strong>. Breaking changes only occur on major bumps.</li>
         <li>All SDKs accept a <code>serverUrl</code> / <code>apiEndpoint</code> config option to point to your self-hosted Advaita collector.</li>
-        <li>The ingest payload format is <strong style={{ color: '#f6f6f1' }}>Amplitude HTTP API v2</strong>: <code>POST /2/httpapi</code> with <code>{'{ api_key, events: [...] }'}</code>.</li>
+        <li>The ingest payload format is <strong style={{ color: '#f6f6f1' }}>HTTP API v2</strong>: <code>POST /2/httpapi</code> with <code>{'{ api_key, events: [...] }'}</code>.</li>
         <li>Minor and patch releases are always backward-compatible within a major version.</li>
       </ul>
     </>

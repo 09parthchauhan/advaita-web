@@ -20,7 +20,7 @@ export default function NodeSDK() {
 
       <h1>Node.js SDK</h1>
       <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: '24px' }}>
-        <code>acai-node</code> is the server-side Node.js SDK. It runs only in Node environments — if loaded in a browser it logs a warning and exits. Forked from <strong style={{ color: '#f6f6f1' }}>amplitude-node</strong> (MIT).
+        <code>acai-node</code> is the server-side Node.js SDK. It runs only in Node environments — if loaded in a browser it logs a warning and exits.
       </p>
 
       <div className="docs-callout docs-callout-warning">

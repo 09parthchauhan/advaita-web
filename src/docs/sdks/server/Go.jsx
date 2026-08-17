@@ -20,7 +20,7 @@ export default function GoSDK() {
 
       <h1>Go SDK</h1>
       <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: '24px' }}>
-        <code>github.com/acai/analytics-go</code> is the Go server SDK with a plugin architecture, an <code>Identify</code> builder, and configurable retry and storage. Forked from <strong style={{ color: '#f6f6f1' }}>github.com/amplitude/analytics-go</strong> (Apache 2.0).
+        <code>github.com/acai/analytics-go</code> is the Go server SDK with a plugin architecture, an <code>Identify</code> builder, and configurable retry and storage.
       </p>
 
       <h2 id="install">Installation</h2>

@@ -21,7 +21,7 @@ export default function JavaScriptSDK() {
 
       <h1>JavaScript SDK</h1>
       <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: '24px' }}>
-        <code>acai-js</code> is the browser SDK for vanilla JavaScript projects. It persists events to <code>localStorage</code>, manages sessions, and auto-captures UTM parameters, referrer, and click IDs. Forked from <strong style={{ color: '#f6f6f1' }}>amplitude-js</strong> (MIT).
+        <code>acai-js</code> is the browser SDK for vanilla JavaScript projects. It persists events to <code>localStorage</code>, manages sessions, and auto-captures UTM parameters, referrer, and click IDs.
       </p>
 
       <div className="docs-callout docs-callout-info">

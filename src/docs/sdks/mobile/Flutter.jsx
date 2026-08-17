@@ -20,7 +20,7 @@ export default function FlutterSDK() {
 
       <h1>Flutter SDK</h1>
       <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: '24px' }}>
-        <code>acai_flutter</code> supports iOS, Android, macOS, and Web from a single Dart codebase. On mobile it auto-tracks sessions, app lifecycles, screen views, and deep links. Forked from <strong style={{ color: '#f6f6f1' }}>amplitude_flutter</strong> (MIT).
+        <code>acai_flutter</code> supports iOS, Android, macOS, and Web from a single Dart codebase. On mobile it auto-tracks sessions, app lifecycles, screen views, and deep links.
       </p>
 
       <h2 id="install">Installation</h2>

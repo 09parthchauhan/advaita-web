@@ -73,7 +73,6 @@ export const NAV = [
       { label: 'Overview',  slug: 'overview' },
       { label: 'Segment',   slug: 'segment' },
       { label: 'Mixpanel',  slug: 'mixpanel' },
-      { label: 'Amplitude', slug: 'amplitude' },
     ],
   },
   {

@@ -20,7 +20,7 @@ export default function TypescriptBrowserSDK() {
 
       <h1>TypeScript Browser SDK</h1>
       <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: '24px' }}>
-        <code>@acai/analytics-browser</code> is the modern browser SDK with first-class TypeScript support, a plugin architecture, and optional autocapture. Forked from <strong style={{ color: '#f6f6f1' }}>@amplitude/analytics-browser</strong> (MIT).
+        <code>@acai/analytics-browser</code> is the modern browser SDK with first-class TypeScript support, a plugin architecture, and optional autocapture.
       </p>
 
       <h2 id="install">Installation</h2>
